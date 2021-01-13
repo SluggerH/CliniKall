@@ -1,0 +1,35 @@
+/***************** GLOBAL *****************/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    max-width: 960px; 
+}
+
+/* Définition des couleurs
+
+:root 1{
+    --color1: ;
+    --color2: ;
+    --color3: ;
+    --color4: ;
+    --color5: ;
+    --color6: #000000;
+    --color7: #FFFFFF;
+}
+
+/* définition des titres */
+
+
+/***************** ACCUEIL *****************/
+
+
+/***************** SECTION *****************/
+
+
+/***************** FOOTER *****************/
+
+
