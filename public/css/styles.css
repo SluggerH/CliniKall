@@ -12,13 +12,14 @@
 /* Définition des couleurs
 
 :root 1{
-    --color1: ;
-    --color2: ;
-    --color3: ;
-    --color4: ;
-    --color5: ;
-    --color6: #000000;
-    --color7: #FFFFFF;
+    --color1: #7ECDED bleu clair;
+    --color2: #3589C9 bleu moyen;
+    --color3: #1F3D89 bleu foncé;
+    --color4: #9FC51E vert clair;
+    --color5: #53AE32 vert moyen;
+    --color6: #086838 vert foncé;
+    --color8: #000000;
+    --color9: #FFFFFF;
 }
 
 /* définition des titres */
@@ -26,7 +27,133 @@
 
 /***************** ACCUEIL *****************/
 .accueil{
-  background-image: url(images/accueil.jpg);
+  background-image: url('/images/accueil.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 35vh;
+  position: relative;
+}
+span{
+  font-weight: bold;
+}
+hr{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+
+}
+.rdv-accueil{
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #3589c9d0;
+  position: absolute;
+  top: 50%;
+  left: 30px;
+  transform: translateY(-50%);
+}
+.rdv-accueil p{
+  color: white;
+}
+.text-rh-ac p{
+  font-size: 20px;
+}
+.formu input{
+  border-radius: 5px;
+  border: 0px;
+  padding: 3px;
+}
+.rechercher{
+  margin-top: 5px;
+  background-color: #1F3D89;
+  color: white;
+}
+
+.comment-marche, .clinique-apporte, .reserve-ligne{
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.cm-1 p{
+  font-size: 25px;
+  color: #1F3D89;
+  font-weight: medium;
+}
+.cm-2 p{
+  font-size: 16px;
+  color: #1F3D89;
+  font-weight: medium;
+}
+
+.ca-1 p{
+  font-size: 25px;
+  color: #FFFFFF;
+  font-weight: medium;
+}
+.ca-2 p{
+  font-size: 16px;
+  color: #FFFFFF;
+  font-weight: medium;
+  text-align: justify;
+}
+
+.rl-1 p{
+  font-size: 25px;
+  color: #1F3D89;
+  font-weight: medium;
+}
+.rl-2 p{
+  font-size: 16px;
+  color: #1F3D89;
+  font-weight: medium;
+  text-align: justify;
+}
+
+.cm-1, .ca-1, .rl-1{
+  text-align: center;
+  margin-bottom: 60px;
+}
+.cm-2{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cm-2 p{
+  text-align: center;
+}
+.picto-ac{
+  margin: 20px;
+  width: auto;
+  height: 150px;
+}
+
+.ca-2, .rl-2{
+  display: flex;
+}
+
+.clinique-apporte{
+  background-color: #3589C9;
+}
+.photo-ac{
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.photo-ac img{
+  width: 100%;
+  border-radius: 5px;
+}
+.desc-ac{
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.desc-ac p{
+  margin: 10px 40px 10px 40px;
 }
 
 /***************** NEWSLETTER *****************/
@@ -49,7 +176,7 @@
     line-height:1.5;
     padding-top:0;
     margin-top:0;
-    color:inherit;
+    color:#1F3D89;
   }
   
   .newsletter-subscribe .intro {
