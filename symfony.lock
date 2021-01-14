@@ -99,6 +99,9 @@
     "nikic/php-parser": {
         "version": "v4.10.4"
     },
+    "nzo/url-encryptor-bundle": {
+        "version": "v6.0.0"
+    },
     "phpdocumentor/reflection-common": {
         "version": "2.2.0"
     },
@@ -359,6 +362,9 @@
     "symfony/polyfill-php80": {
         "version": "v1.22.0"
     },
+    "symfony/polyfill-uuid": {
+        "version": "v1.22.0"
+    },
     "symfony/process": {
         "version": "v5.2.1"
     },
@@ -465,6 +471,9 @@
     },
     "symfony/twig-pack": {
         "version": "v1.0.1"
+    },
+    "symfony/uid": {
+        "version": "v5.2.1"
     },
     "symfony/validator": {
         "version": "4.3",
