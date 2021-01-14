@@ -1,7 +1,0 @@
-nzo_encryptor :
-  secret_key : '%env(NZO_SECRET_KEY)%'     # Obligatoire, longueur maximale de 100 caractères. 
-  # secret_iv :   YourSecretIv                # Requis uniquement si "random_pseudo_bytes" est FALSE. Longueur maximale de 100 caractères. 
-  # algorithme de chiffrement :                       # facultatif, par défaut: 'aes-256-ctr' 
-  # base64_encode :                          # facultatif, par défaut: TRUE 
-  # format_base64_output :                   # facultatif, par défaut: TRUE, utilisé uniquement lorsque 'base64_encode' est défini sur TRUE 
-  # random_pseudo_bytes :                    # optionnel, par défaut: TRUE (générer une sortie de texte crypté aléatoire à chaque fois => PLUS SÉCURISÉ!)
