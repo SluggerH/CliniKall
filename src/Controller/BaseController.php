@@ -22,5 +22,29 @@ class BaseController extends AbstractController
             'ROUTE_NAME' => $ROUTE_NAME,
         ]);
     }
+
+        /**
+     * @Route("/account-decide", name="account-redirect")
+     */
+    public function accountRedirect()
+    {
+        if ($this->isGranted('ROLE_ADMIN'))
+        {
+            return $this->redirectToRoute('admin');
+        } 
+        elseif ($this->isGranted('ROLE_USER'))
+        {
+            return $this->redirectToRoute('user');
+        } 
+        else {
+            return $this->redirectToRoute('accueil');
+        }
+    }
+
+    public function footer()
+    {
+        return $this->render('base/footer.html.twig');
+         
+    }
     
 }

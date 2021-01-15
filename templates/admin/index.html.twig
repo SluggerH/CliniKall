@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Espace Admin{% endblock %}
+
+{% block body %}
+<h1>Espace Administrateur</h1>
+</br>
+<h2>Liste des users</h2>
+</br>
+<div class="card-group">
+   {% for user in users %}
+   
+    <div class="card" style="width: 18rem;">
+         <div class="card-body">
+            <h5 class="card-title">{{ user.lastname }}  {{ user.firstname }}</h5>
+            <h6 class="card-subtitle mb-2 text-muted"> {{ user.phone }}</h6>
+            <p class="card-text">{{ user.email }}</p>
+            <p class="card-text">{{ user.adress }}</p>
+            <p class="card-text">{{ user.codePostal }}  {{ user.city }}</p>
+            <a href="{{ path('admin_delete_user',{id:user.id}) }}" class="btn btn-danger">Supprimer le compte</a>
+        </div>
+    </div> 
+  
+{% endfor %}
+</div>
+{% endblock %}
