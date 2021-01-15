@@ -1,33 +1,518 @@
 /***************** GLOBAL *****************/
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-.container{
-    max-width: 960px; 
-}
+  *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+  }
+  .container{
+      max-width: 960px; 
+  }
 
 /* Définition des couleurs
 
 :root 1{
-    --color1: ;
-    --color2: ;
-    --color3: ;
-    --color4: ;
-    --color5: ;
-    --color6: #000000;
-    --color7: #FFFFFF;
+    --color1: #7ECDED bleu clair;
+    --color2: #3589C9 bleu moyen;
+    --color3: #1F3D89 bleu foncé;
+    --color4: #9FC51E vert clair;
+    --color5: #53AE32 vert moyen;
+    --color6: #086838 vert foncé;
+    --color8: #000000;
+    --color9: #FFFFFF;
 }
 
 /* définition des titres */
 
 
+/***************** HEADER *****************/
+
+  /* .navbar-toggle {
+    position: fixed;
+    right: 10px;
+    top: 12px;
+    cursor: pointer;
+    z-index: 10;
+  }
+
+  .overlay {
+      background: transparent;
+      width: 100%;
+      height: 100vh;
+      position: fixed;
+      transition: all 0.5s;
+  } */
+
+
+  /*Navigation 1*/
+  .nav-1{
+    display: flex;
+    justify-content: space-between;
+  }
+  .bg-light {
+    background-color: #fff !important;
+  }
+
+  .navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+  a.nav-link{
+    color: #1F3D89;
+  }
+  .navbar-light .navbar-nav .nav-link:hover{
+    color: #7ECDED;
+  }
+
+  .navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+    color: #1F3D89;
+    font-size: large;
+  }
+
+  .nav-link:hover{
+    color:#7ECDED;
+  }
+
+  .btn-nav{
+    justify-content: space-between;
+  }
+
+
+  .btn-compte{
+    border: 1px solid #1F3D89;
+    color: #1F3D89;
+    margin-right: 10px;
+  }
+  .btn-compte:hover{
+    color: #FFF!important;
+    background: #7ECDED!important;
+    border: 1px solid #7ECDED!important;
+  }
+
+  .btn-connexion{
+    background: #1F3D89;
+    color: white;
+  }
+  .btn-connexion:hover{
+    background: #7ECDED!important;
+    border: 1px solid #7ECDED!important;
+    color: white;
+  }
+
+  /*Navigation 2*/
+  .nav-2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #1F3D89;
+  }
+
+  .nav-link{
+    padding: 0 5 0 5px;
+  }
+
 /***************** ACCUEIL *****************/
-.accueil{
-  background-image: url(images/accueil.jpg);
-}
+  .accueil{
+    background-image: url('/images/accueil.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 35vh;
+    position: relative;
+  }
+  span{
+    font-weight: bold;
+  }
+  hr{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .rdv-accueil{
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #3589c9d0;
+    position: absolute;
+    top: 50%;
+    left: 30px;
+    transform: translateY(-50%);
+  }
+  .rdv-accueil p{
+    color: white;
+  }
+  .text-rh-ac p{
+    font-size: 20px;
+  }
+  .formu input{
+    border-radius: 5px;
+    border: 0px;
+    padding: 3px;
+  }
+  .rechercher{
+    margin-top: 5px;
+    background-color: #1F3D89;
+    color: white;
+  }
+  .comment-marche, .clinique-apporte, .reserve-ligne{
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .cm-1 p{
+    font-size: 25px;
+    color: #1F3D89;
+    font-weight: medium;
+  }
+  .cm-2 p{
+    font-size: 16px;
+    color: #1F3D89;
+    font-weight: medium;
+  }
+
+  .ca-1 p{
+    font-size: 25px;
+    color: #FFFFFF;
+    font-weight: medium;
+  }
+  .ca-2 p{
+    font-size: 16px;
+    color: #FFFFFF;
+    font-weight: medium;
+    text-align: justify;
+  }
+
+  .rl-1 p{
+    font-size: 25px;
+    color: #1F3D89;
+    font-weight: medium;
+  }
+  .rl-2 p{
+    font-size: 16px;
+    color: #1F3D89;
+    font-weight: medium;
+    text-align: justify;
+  }
+
+  .cm-1, .ca-1, .rl-1{
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  .cm-2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .cm-2 p{
+    text-align: center;
+  }
+  .picto-ac{
+    margin: 20px;
+    width: auto;
+    height: 150px;
+  }
+
+  .ca-2, .rl-2{
+    display: flex;
+  }
+
+  .clinique-apporte{
+    background-color: #3589C9;
+  }
+  .photo-ac{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .photo-ac img{
+    width: 100%;
+    border-radius: 5px;
+  }
+  .desc-ac{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .desc-ac p{
+    margin: 10px 40px 10px 40px;
+  }
+
+/***************** A PROPOS *****************/
+  .a-propos{
+    background-image: url('/images/salle-attente.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 35vh;
+    position: relative;
+  }
+  span{
+    font-weight: bold;
+  }
+  hr{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .rdv-a-propos{
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #3589c9d0;
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    transform: translateY(-50%)
+  }
+  .rdv-a-propos p{
+    color: white;
+  }
+  .text-rh-ap p{
+    font-size: 20px;
+  }
+  .formu input{
+    border-radius: 5px;
+    border: 0px;
+    padding: 3px;
+  }
+  .rechercher{
+    margin-top: 5px;
+    background-color: #1F3D89;
+    color: white;
+  }
+
+
+  .clinique-regroupe, .clinique-lieu-soins, .quelque-info{
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .clinique-lieu-soins{
+    background-color: #3589C9;
+  }
+  .clr-1, .cls-1, .qi-1{
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  .cls-2, .qi-2{
+    display: flex;
+  }
+
+  .clr-1 p{
+    font-size: 25px;
+    color: #1F3D89;
+    font-weight: medium;
+  }
+  .picto-ap{
+    margin: 20px;
+    width: auto;
+    height: 150px;
+  }
+  .clr-2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .clr-2 img{
+    border-radius: 5px;
+  }
+  .clr-2 p{
+    font-size: 16px;
+    color: #1F3D89;
+    font-weight: medium;
+    text-align: center;
+  }
+
+  .cls-1 p{
+    font-size: 25px;
+    color: #FFFFFF;
+    font-weight: medium;
+  }
+  .cls-2 p{
+    font-size: 16px;
+    color: #FFFFFF;
+    font-weight: medium;
+    text-align: justify;
+  }
+
+  .qi-1 p{
+    font-size: 25px;
+    color: #1F3D89;
+    font-weight: medium;
+  }
+  .qi-2 p{
+    font-size: 16px;
+    color: #1F3D89;
+    font-weight: medium;
+    text-align: justify;
+  }
+
+  .photo-ap{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .photo-ap img{
+    width: 100%;
+    border-radius: 5px;
+  }
+  .desc-ap{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .desc-ap p{
+    margin: 10px 40px 10px 40px;
+  }
+  .infos-ap{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .infos-ap p{
+    font-size: 13px;
+  }
+  .infos-ap h3{
+    font-size: 16px;
+    color: #1F3D89;
+  }
+  .info{
+    padding: 20px;
+  }
+
+/***************** PRATICIEN *****************/
+  .praticiens{
+    background-image: url('/images/praticien.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 35vh;
+    position: relative;
+  }
+  span{
+    font-weight: bold;
+  }
+  hr{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .rdv-praticiens{
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #3589c9d0;
+    position: absolute;
+    top: 50%;
+    left: 30px;
+    transform: translateY(-50%)
+  }
+  .rdv-praticiens p{
+    color: white;
+  }
+  .text-rh-pt p{
+    font-size: 20px;
+  }
+  .formu input{
+    border-radius: 5px;
+    border: 0px;
+    padding: 3px;
+  }
+  .rechercher{
+    margin-top: 5px;
+    background-color: #1F3D89;
+    color: white;
+  }
+  .card{
+    width: 20%;
+  }
+  .btn-pt{
+    border-radius: 0px 0px 5px 5px;
+  }
+
+
+  .clinique-regroupe, .medecin, .kine, .dentiste, .quelque-info{
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .medecin, .dentiste{
+    background-color: #3589C9;
+  }
+  .clr-1, .md-1, .k-1, .dt-1, .qi-1{
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  .cls-2, .qi-2{
+    display: flex;
+  }
+
+  .clr-1 p, .k-1 h2{
+    font-size: 25px;
+    color: #1F3D89;
+    font-weight: medium;
+  }
+  .md-1 h2, .dt-1 h2{
+    color: white;
+    font-size: 25px;
+    font-weight: medium;
+  }
+  .picto-pt{
+    margin: 20px;
+    width: auto;
+    height: 150px;
+  }
+  .clr-2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .clr-2 img{
+    border-radius: 5px;
+  }
+  .clr-2 p{
+    font-size: 16px;
+    color: #1F3D89;
+    font-weight: medium;
+    text-align: center;
+  }
+
+  .qi-1 p{
+    font-size: 25px;
+    color: #1F3D89;
+    font-weight: medium;
+  }
+  .qi-2 p{
+    font-size: 16px;
+    color: #1F3D89;
+    font-weight: medium;
+    text-align: justify;
+  }
+
+  .infos-pt{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .infos-pt p{
+    font-size: 13px;
+  }
+  .infos-pt h3{
+    font-size: 16px;
+    color: #1F3D89;
+  }
+  .info{
+    padding: 20px;
+  }
 
 /***************** NEWSLETTER *****************/
 
@@ -49,7 +534,7 @@
     line-height:1.5;
     padding-top:0;
     margin-top:0;
-    color:inherit;
+    color:#1F3D89;
   }
   
   .newsletter-subscribe .intro {
@@ -109,4 +594,45 @@
 
 /***************** FOOTER *****************/
 
+  /* Footer général */
+  .footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    max-width: 960px;
+    background: #1F3D89;
 
+  }
+
+  /* Partie link */
+
+  a.text-dark {
+    color: #fff!important;
+    font-size: 12px;
+  }
+  a.text-dark:hover {
+    color: #7ECDED!important;
+    text-decoration: none;
+  }
+
+  h5.text-uppercase{
+    padding-bottom: 15px;
+    font-size: 13px;
+  }
+
+  /* Mention */
+  .mentions{
+    /* max-width: 960px; */
+    padding: 0 103px 10px 103px;
+  }
+
+  /* Copyright */
+  .copyright{
+    max-width: 960px;
+    font-size: 10px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
