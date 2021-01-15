@@ -5,7 +5,7 @@
     <nav class="navbar navbar-light bg-light">
     <a class="navbar-brand" href="#">
         <!-- Logo -->
-        <img src="/images/Clinikall 150x40.svg" width="250" alt="">
+        <a href="{{ path('accueil') }}"><img src="/images/Clinikall 150x40.svg" width="250" alt=""></a>
     </a>
     </nav>
     <!-- Boutons -->
@@ -15,8 +15,14 @@
             <a class="nav-link" href="#">Espace professionel</a>
              <!-- petit bouton -->
             <div class="btn-nav">
-                <button class="btn btn-sm btn-outline-secondary btn-compte" type="button">Créer un compte</button> <!-- border bleu typo bleu -->
-                <button class="btn btn-sm btn-outline-secondary btn-connexion" type="button">Se connecter</button> <!-- fond bleu typo blanche -->
+                <a class="btn btn-sm btn-outline-secondary btn-compte" href="{{path('app_register')}}" type="button">Créer un compte</a> <!-- border bleu typo bleu -->
+
+                {% if app.user %}
+                    <a class="btn btn-sm btn-outline-secondary btn-connexion" type="button" href="{{ path('app_logout') }}">Déconnexion</a><!-- fond bleu typo blanche -->
+                {% else %}
+                    <a class="btn btn-sm btn-outline-secondary btn-connexion" type="button" href="{{ path('app_login') }}">Se connecter</a> <!-- fond bleu typo blanche -->
+                {% endif %}
+
             </div>
              <!-- petit bouton Fin -->
         </form>

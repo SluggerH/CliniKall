@@ -51,7 +51,7 @@ class PasswordResetController extends AbstractController
         return $this->redirectToRoute('password_reset');
         }
 
-        return $this->render('password_reset/index.html.twig', [
+        return $this->render('password_reset/password_reset.html.twig', [
         ]);
     }
 

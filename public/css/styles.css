@@ -108,7 +108,7 @@
   }
 
   .nav-link{
-    padding: 0 5 0 5px;
+    padding: 0px 5px 0px 5px;
   }
 
 /***************** ACCUEIL *****************/
@@ -636,3 +636,21 @@
     align-items: center;
     justify-content: center;
   }
+
+/***************** PASSWORD_RESET *****************/
+
+.email-password-reset, .h1-password-reset{
+  color: #1F3D89;
+}
+
+/***************** REGISTER *****************/
+
+.h1-register, .required{
+  color: #1F3D89;
+}
+
+/***************** CONNEXION *****************/
+
+.champs-login, .h1-connexion{
+  color: #1F3D89;
+}
