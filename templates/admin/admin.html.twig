@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Espace Admin{% endblock %}
+
+{% block body %}
+
+    <div class="container espace-admin">
+        <h1 class="h1-espace-admin">Espace Administrateur</h1>
+        </br>
+
+        <form method="GET">
+                <div class="row mb-3">
+                    <input type="text" class="form-control" name="search" id="inputEmail3" placeholder="Rechercher avec un Nom, Prénom ou Email">
+                    <br><br>
+                    <button class="btn btn-primary">Rechercher</button>
+                </div>
+        </form>
+        <br>
+
+        <div class="card-group info-user-admin">
+            {% for search_user in search_users %}
+                
+                <div class="card-body card-admin">
+                    <h5 class="card-title">{{ search_user.lastname }}  {{ search_user.firstname }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted"> {{ search_user.phone }}</h6>
+                    <p class="card-text">{{ search_user.email }}</p>
+                    <p class="card-text">{{ search_user.adress }}</p>
+                    <p class="card-text">{{ search_user.codePostal }}  {{ search_user.city }}</p>
+                    <a href="{{ path('admin_delete_user',{id:search_user.id}) }}" class="btn btn-danger">Supprimer le compte</a>
+                </div>
+                     
+            {% endfor %}
+        </div>
+
+        <h2>Liste des users</h2>
+        </br>
+        <div class="card-group info-user-admin">
+            {% for user in users %}
+                {% if user.roles == ['ROLE_USER'] %}
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ user.lastname }}  {{ user.firstname }}</h5>
+                            <h6 class="card-title"> {{ user.phone }}</h6>
+                            <p class="card-text">{{ user.email }}</p>
+                            <p class="card-text">{{ user.adress }}</p>
+                            <p class="card-text">{{ user.codePostal }}  {{ user.city }}</p>
+                            <a href="{{ path('admin_delete_user',{id:user.id}) }}" class="btn btn-danger">Supprimer le compte</a>
+                        </div>
+                    </div> 
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    
+{% endblock %}

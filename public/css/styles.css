@@ -654,3 +654,14 @@
 .champs-login, .h1-connexion{
   color: #1F3D89;
 }
+
+/***************** ADMIN *****************/
+.h1-espace-admin, .info-user-admin p, .info-user-admin h5, .info-user-admin h6{
+  color: #1F3D89;
+}
+
+.card-admin{
+  margin: 20px;
+  border: 1px solid #1F3D89;
+  border-radius: 5px;
+}
