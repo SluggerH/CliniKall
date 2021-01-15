@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Compléter, Modifier son compte{% endblock %}
+
+{% block body %}
+
+    <div class="container register">
+        
+        <h1 class="h1-register">Compléter, Modifier son compte</h1>
+
+        {{ form_start(userForm) }}
+
+            {{ form_row(userForm.firstname) }}     
+            {{ form_row(userForm.lastname) }}
+            {{ form_row(userForm.phone) }}
+            {{ form_row(userForm.email) }}
+            {{ form_row(userForm.adress) }}
+            {{ form_row(userForm.codePostal) }}
+            {{ form_row(userForm.city) }}
+
+            <button class="btn btn-primary" type="submit">Valider</button>
+            </br></br>
+        {{ form_end(userForm) }}
+    </div>
+    
+{% endblock %}

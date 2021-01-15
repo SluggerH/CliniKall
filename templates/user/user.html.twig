@@ -5,5 +5,19 @@
 {% block body %}
 <h1>Espace User</h1>
 
+        <div class="card-group info-user-admin">
+                    
+                <div class="card-body card-admin">
+                    <h5 class="card-title">Nom: {{ user.lastname }}  Prénom: {{ user.firstname }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Téléphone:  {{ user.phone }}</h6>
+                    <p class="card-text">Email: {{ user.email }}</p>
+                    <p class="card-text">Adresse: {{ user.adress }}</p>
+                    <p class="card-text">CP: {{ user.codePostal }}  Ville:{{ user.city }}</p>
+                    <a href="{{ path('user_modify',{id:user.id}) }}" class="btn btn-danger">Compléter/Modifier le compte</a>
+                </div>
+                            
+        </div>
+
+
 {% endblock %}
 
