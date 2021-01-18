@@ -1,0 +1,11 @@
+{% extends "email/base.email.twig" %}
+
+{% block body %}
+    Vous avez reçu un email professionnel de {{ userPro.email }}:
+    <br>
+    Nom: <b>{{ userPro.lastname }}</b>   Prénom:<b>{{ userPro.firstname }}</b>
+    <br><br>
+    Téléphone:<b>{{ userPro.phone }}</b>
+    <br><br>
+    Spécialité:<b>{{ userPro.descriptionPatient }}</b>
+{% endblock %}

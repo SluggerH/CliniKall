@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\User;
 use Doctrine\DBAL\Types\TextType as TypesTextType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -34,9 +35,14 @@ class ProContactType extends AbstractType
         ->add('city',TextType::class,[
                             'label'=>'Ville'
                              ])
-        ->add('descriptionPatient',TextType::class,[
-                                'label'=>'Précisez votre spécialité'
-                                 ])
+        ->add('descriptionPatient',ChoiceType::class,[
+                                'label'=>'Précisez votre spécialité',
+                                'choices'  => [
+                                    'dentiste' => 'dentiste',
+                                    'kiné' => 'kiné',
+                                    'médecin' => 'médecin',
+                                ],
+                            ])
         ->add('codePostal')
         ->add('phone')
         ->add('agreeTerms', CheckboxType::class, [

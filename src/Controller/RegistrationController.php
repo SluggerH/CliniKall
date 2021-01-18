@@ -100,46 +100,56 @@ class RegistrationController extends AbstractController
     }
 
     /**
-     * @Route("/inscription_pro", name="pro_register")
+     * @Route("/inscription_pro", name="register_pro")
      */
     public function registerPro(Request $request, UserPasswordEncoderInterface $passwordEncoder,EmailService $emailService): Response
     {
-        $user = new User();
-        $form = $this->createForm(ProContactType::class, $user);
+        $userpro = new User();
+        $form = $this->createForm(ProContactType::class, $userpro);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             // encode the plain password
-            $user->setPassword(
+            $userpro->setPassword(
                 $passwordEncoder->encodePassword(
-                    $user,
+                    $userpro,
                     $form->get('plainPassword')->getData()
                 )
             );
 
-            $user->setRoles(["ROLE_PRO"]);
+            $userpro->setRoles(["ROLE_PRO"]);
 
             $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($user);
+            $entityManager->persist($userpro);
             $entityManager->flush();
 
-            $token=$this->encryptor->encrypt($user->getEmail());
+            $token=$this->encryptor->encrypt($userpro->getEmail());
 
             // generate a signed url and email it to the user
              $emailService->send([
-                'to'=>$user->getEmail(),
-                'subject'=>"Demande d'inscription sur ClinKall",
+                'to'=>$userpro->getEmail(),
+                'subject'=>"Demande d'inscription de praticien sur ClinKall",
                 'template'=>'email/accuse_reception_pro.email.twig',
                 'context'=>[
-                     'link' => $this->generateUrl('app_verify_email', [ 'token' => $token ], UrlGeneratorInterface::ABSOLUTE_URL)
+                     
                           ]
+                ]);
+
+            $emailService->send ( [
+                'replyTo' => $userpro->getEmail(),
+                'subject' => '',
+                'template' => 'email/contact_pro.email.twig',
+                'context'=> [
+                      'userPro'=>$userpro
+                    ]
+                      
                 ]);
                 // do anything else you need here, like send an email
                  $this->addFlash('success',"Votre demande d'inscription est prise en compte.Consultez votre boîte mail.");
             
                  return $this->redirectToRoute('accueil');
         }
-        return $this->render('registration/pro_contact.html.twig', [
+        return $this->render('registration/contact_pro.html.twig', [
             'ProContactForm' => $form->createView(),
         ]);
     }

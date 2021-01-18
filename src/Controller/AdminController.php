@@ -16,26 +16,27 @@ class AdminController extends AbstractController
      */
     public function index(UserRepository $userRepository,Request $request): Response
     {
-        $users=$userRepository->findBy(
+        $userpros=$userRepository->findBy(
         array(
-            'isVerified'=> 'true'
+                   
         ),
         array(
             'lastname'=> 'ASC',
             'firstname'=> 'ASC'
         )
         );
+      
 
         $search=$request->query->get('search');
         if($search){
             $search_users=$userRepository->search($search);
-        } else {
-            $search_users=$userRepository->findAll();
-        }
+        } else{
+             $search_users=$userRepository->findAll();
+        }          
 
         return $this->render('admin/admin.html.twig', [
-            'users' => $users,
-            'search_users'=>$search_users
+            'search_users'=>$search_users,
+            'userpros'=>$userpros
         ]);
     }
 
@@ -50,6 +51,22 @@ class AdminController extends AbstractController
           $em->flush();
 
           $this->addFlash('success',"Le compte a bien été supprimé.");
+
+        return $this->redirectToRoute('admin'); 
+
+    }
+
+        /**
+     * @Route("/admin_validate_user/{id}", name="admin_validate_user")
+     */
+    public function validateUser(User $user) 
+    {
+          $user->getUsername();
+          $user->setIsVerified(true);
+          $em=$this->getDoctrine()->getManager();
+          $em->flush();
+
+          $this->addFlash('success',"Le compte a bien été validé.");
 
         return $this->redirectToRoute('admin'); 
 

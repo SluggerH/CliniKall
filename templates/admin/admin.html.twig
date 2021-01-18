@@ -15,11 +15,11 @@
                     <button class="btn btn-primary">Rechercher</button>
                 </div>
         </form>
-        <br>
+        </br>
 
         <div class="card-group info-user-admin">
             {% for search_user in search_users %}
-                
+
                 <div class="card-body card-admin">
                     <h5 class="card-title">{{ search_user.lastname }}  {{ search_user.firstname }}</h5>
                     <p class="card-text"> 0{{ search_user.phone }}</p>
@@ -32,25 +32,28 @@
             {% endfor %}
         </div>
 
-        {# <h2>Liste des users</h2>
+       <h2>Liste des Praticiens</h2>
+       <h1 class="h1-espace-admin">Liste des Praticiens</h1>
         </br>
         <div class="card-group info-user-admin">
-            {% for user in users %}
-                {% if user.roles == ['ROLE_USER'] %}
+            {% for userpro in userpros %}
+               {% if userpro.descriptionPatient == 'dentiste' or userpro.descriptionPatient == 'kiné' or userpro.descriptionPatient == 'médecin' %}
                     <div class="card" style="width: 18rem;">
                         <div class="card-body">
-                            <h5 class="card-title">{{ user.lastname }}  {{ user.firstname }}</h5>
-                            <h6 class="card-title"> {{ user.phone }}</h6>
-                            <p class="card-text">{{ user.email }}</p>
-                            <p class="card-text">{{ user.adress }}</p>
-                            <p class="card-text">{{ user.codePostal }}  {{ user.city }}</p>
-                            <a href="{{ path('admin_delete_user',{id:user.id}) }}" class="btn btn-danger">Supprimer le compte</a>
+                            <h5 class="card-title">{{ userpro.lastname }}  {{ userpro.firstname }}</h5>
+                            <p class="card-title"> {{ userpro.descriptionPatient }}</p>
+                            <h6 class="card-title"> {{ userpro.phone }}</h6>
+                            <p class="card-text">{{ userpro.email }}</p>
+                            <p class="card-text">{{ userpro.adress }}</p>
+                            <p class="card-text">{{ userpro.codePostal }}  {{ userpro.city }}</p>
+                            <a href="{{ path('admin_delete_user',{id:userpro.id}) }}" class="btn btn-danger">Supprimer le compte</a>
+                            {% if  userpro.isVerified == false %}
+                            <a href="{{ path('admin_validate_user',{id:userpro.id}) }}" class="btn btn-primary">Valider l'inscription</a>
+                            {% endif %}
                         </div>
                     </div> 
                 {% endif %}
             {% endfor %}
-        </div> #}
-
-    </div>
+         </div>  
     
 {% endblock %}

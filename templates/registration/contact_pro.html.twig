@@ -5,11 +5,7 @@
 {% block body %}
 
     <div class="container register">
-    
-        {% for flashError in app.flashes('verify_email_error') %}
-            <div class="alert alert-danger" role="alert">{{ flashError }}</div>
-        {% endfor %}
-    
+       
         <h1 class="h1-register">Demande nouveau compte Praticien</h1>
 
         {{ form_start(ProContactForm) }}
