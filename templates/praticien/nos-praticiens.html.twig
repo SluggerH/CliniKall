@@ -4,6 +4,7 @@
 
 {% block body %}
 
+    <!-- section photo et rdv -->
     <div class="container praticiens">
         <div class="rdv-praticiens">
             <div class="text-rh-pt">
@@ -16,6 +17,8 @@
             </div>
         </div>
     </div>
+
+    <!-- Titre et 3 images présentation de section -->
     <div class="container clinique-regroupe">
         <div class="container clr-1">
             <p class="">Notre clinique regrouge</p>
@@ -36,24 +39,104 @@
             </div>
         </div>
     </div>
+
+    <!-- carousel Médecin -->
     <div class="container medecin">
+    <!-- fond -->
         <div class="container md-1">
             <h2>Nos médecins</h2>
             <hr color="#FFFFFF" width="70px">
         </div>
-        <div class="container md-2">
+
+        <!-- card -->
+        {# <div class="container md-2">
             <div class="card">
                 <h3 style="color:#1F3D89; text-align:center;">Dr.JAILMAL</h3>
                 <img class="card-img-top" src="../images/portrait.jpg" alt="">
                 <button class="btn btn-pt btn-primary">En savoir plus</button>
             </div>
+        </div> #}
+
+        <div id="carouselExampleIndicatorsMedecin" class="carousel slideMedecin" data-ride="carousel">
+            <ol class="carousel-indicators-Medecin">
+                <li data-target="#carouselExampleIndicatorsMedecin" data-slide-to="0" class="active-Medecin"></li>
+                <li data-target="#carouselExampleIndicatorsMedecin" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicatorsMedecin" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner-Medecin">
+                <div class="carousel-item activeMedecin">
+                    <div class="card">
+                        <h3 style="color:#1F3D89; text-align:center;">Dr.JAILMAL</h3>
+                        <img class="card-img-top" src="../images/portrait.jpg" alt="">
+                        <button class="btn btn-pt btn-primary">En savoir plus</button>
+                    </div>
+                    <div class="card">
+                        <h3 style="color:#1F3D89; text-align:center;">Dr.JAILMAL</h3>
+                        <img class="card-img-top" src="../images/portrait.jpg" alt="">
+                        <button class="btn btn-pt btn-primary">En savoir plus</button>
+                    </div>
+                    <div class="card">
+                        <h3 style="color:#1F3D89; text-align:center;">Dr.JAILMAL</h3>
+                        <img class="card-img-top" src="../images/portrait.jpg" alt="">
+                        <button class="btn btn-pt btn-primary">En savoir plus</button>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card">
+                        <h3 style="color:#1F3D89; text-align:center;">Dr.JAILMAL</h3>
+                        <img class="card-img-top" src="../images/portrait.jpg" alt="">
+                        <button class="btn btn-pt btn-primary">En savoir plus</button>
+                    </div>
+                    <div class="card">
+                        <h3 style="color:#1F3D89; text-align:center;">Dr.JAILMAL</h3>
+                        <img class="card-img-top" src="../images/portrait.jpg" alt="">
+                        <button class="btn btn-pt btn-primary">En savoir plus</button>
+                    </div>
+                    <div class="card">
+                        <h3 style="color:#1F3D89; text-align:center;">Dr.JAILMAL</h3>
+                        <img class="card-img-top" src="../images/portrait.jpg" alt="">
+                        <button class="btn btn-pt btn-primary">En savoir plus</button>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card">
+                        <h3 style="color:#1F3D89; text-align:center;">Dr.JAILMAL</h3>
+                        <img class="card-img-top" src="../images/portrait.jpg" alt="">
+                        <button class="btn btn-pt btn-primary">En savoir plus</button>
+                    </div>
+                    <div class="card">
+                        <h3 style="color:#1F3D89; text-align:center;">Dr.JAILMAL</h3>
+                        <img class="card-img-top" src="../images/portrait.jpg" alt="">
+                        <button class="btn btn-pt btn-primary">En savoir plus</button>
+                    </div>
+                    <div class="card">
+                        <h3 style="color:#1F3D89; text-align:center;">Dr.JAILMAL</h3>
+                        <img class="card-img-top" src="../images/portrait.jpg" alt="">
+                        <button class="btn btn-pt btn-primary">En savoir plus</button>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev-Medecin" href="#carouselExampleIndicatorsMedecin" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon-Medecin" aria-hidden="true"></span>
+                <span class="sr-only-Medecin">Previous</span>
+            </a>
+            <a class="carousel-control-next-Medecin" href="#carouselExampleIndicatorsMedecin" role="button" data-slide="next">
+                <span class="carousel-control-next-icon-Medecin" aria-hidden="true"></span>
+                <span class="sr-only-Medecin">Next</span>
+            </a>
         </div>
+
     </div>
+
+    <!-- carousel Kiné -->
     <div class="container kine">
+    <!-- fond -->
         <div class="container k-1">
             <h2>Nos kinésitherapeutes</h2>
             <hr color="#1F3D89" width="70px">
         </div>
+
+        <!-- card -->
         <div class="container k-2">
             <div class="card">
                 <h3 style="color:#1F3D89; text-align:center;">Dr.JAILMAL</h3>
@@ -62,19 +145,88 @@
             </div>
         </div>
     </div>
+
+    <!-- carousel Dentiste -->
     <div class="container dentiste">
+    <!-- fond -->
         <div class="container dt-1">
             <h2>Nos dentistes</h2>
             <hr color="#FFFFFF" width="70px">
         </div>
-        <div class="container dt-2">
-            <div class="card">
-                <h3 style="color:#1F3D89; text-align:center;">Dr.JAILMAL</h3>
-                <img class="card-img-top" src="../images/portrait.jpg" alt="">
-                <button class="btn btn-pt btn-primary">En savoir plus</button>
+
+        <!-- card -->
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="card">
+                        <h3 style="color:#1F3D89; text-align:center;">Dr.JAILMAL</h3>
+                        <img class="card-img-top" src="../images/portrait.jpg" alt="">
+                        <button class="btn btn-pt btn-primary">En savoir plus</button>
+                    </div>
+                    <div class="card">
+                        <h3 style="color:#1F3D89; text-align:center;">Dr.JAILMAL</h3>
+                        <img class="card-img-top" src="../images/portrait.jpg" alt="">
+                        <button class="btn btn-pt btn-primary">En savoir plus</button>
+                    </div>
+                    <div class="card">
+                        <h3 style="color:#1F3D89; text-align:center;">Dr.JAILMAL</h3>
+                        <img class="card-img-top" src="../images/portrait.jpg" alt="">
+                        <button class="btn btn-pt btn-primary">En savoir plus</button>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card">
+                        <h3 style="color:#1F3D89; text-align:center;">Dr.JAILMAL</h3>
+                        <img class="card-img-top" src="../images/portrait.jpg" alt="">
+                        <button class="btn btn-pt btn-primary">En savoir plus</button>
+                    </div>
+                    <div class="card">
+                        <h3 style="color:#1F3D89; text-align:center;">Dr.JAILMAL</h3>
+                        <img class="card-img-top" src="../images/portrait.jpg" alt="">
+                        <button class="btn btn-pt btn-primary">En savoir plus</button>
+                    </div>
+                    <div class="card">
+                        <h3 style="color:#1F3D89; text-align:center;">Dr.JAILMAL</h3>
+                        <img class="card-img-top" src="../images/portrait.jpg" alt="">
+                        <button class="btn btn-pt btn-primary">En savoir plus</button>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card">
+                        <h3 style="color:#1F3D89; text-align:center;">Dr.JAILMAL</h3>
+                        <img class="card-img-top" src="../images/portrait.jpg" alt="">
+                        <button class="btn btn-pt btn-primary">En savoir plus</button>
+                    </div>
+                    <div class="card">
+                        <h3 style="color:#1F3D89; text-align:center;">Dr.JAILMAL</h3>
+                        <img class="card-img-top" src="../images/portrait.jpg" alt="">
+                        <button class="btn btn-pt btn-primary">En savoir plus</button>
+                    </div>
+                    <div class="card">
+                        <h3 style="color:#1F3D89; text-align:center;">Dr.JAILMAL</h3>
+                        <img class="card-img-top" src="../images/portrait.jpg" alt="">
+                        <button class="btn btn-pt btn-primary">En savoir plus</button>
+                    </div>
+                </div>
             </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
+
     </div>
+
+    <!-- container information -->
     <div class="container quelque-info">
         <div class="container qi-1">
             <p class="">Quelques informations</p>
@@ -104,6 +256,7 @@
         </div>
     </div>
 
+    <!-- carousel newsletter -->
     <div class="container newsletter-subscribe">
         <div class="intro">
             <h2 class="text-center">Inscrivez vous à la newsletter</h2>
