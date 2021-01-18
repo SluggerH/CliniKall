@@ -666,18 +666,83 @@
 }
 
 /***************** CONNEXION *****************/
-
-.champs-login, .h1-connexion{
+.connexion{
+  border:1px solid #1F3D89;
+  border-radius: 5px;
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.connexion input{
+  margin-bottom: 10px;
+}
+.champs-login, .h1-connexion, .co-gauche p{
   color: #1F3D89;
+}
+
+.co-droite{
+  width: 50%;
+}
+.co-droite img{
+  width: 100%;
+  border-radius: 5px;
+  margin-left: 20px;
+}
+.co-gauche{
+  width: 50%;
+}
+.resterco-mdp{
+  display: flex;
+  justify-content: space-between;
+}
+.btn-login{
+  color: white;
+  background-color: #1F3D89;
+  margin-bottom: 10px;
+}
+.connexion .inscription-co{
+  text-align: center;
 }
 
 /***************** ADMIN *****************/
 .h1-espace-admin, .info-user-admin p, .info-user-admin h5, .info-user-admin h6{
   color: #1F3D89;
 }
+.h1-espace-admin{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .card-admin{
   margin: 20px;
   border: 1px solid #1F3D89;
   border-radius: 5px;
+}
+
+/***************** USER *****************/
+.h1-espace-user, .info-user p, .info-user h5, .info-user h6{
+  color: #1F3D89;
+}
+.h1-espace-user{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-user{
+  margin: 20px;
+  border: 1px solid #1F3D89;
+  border-radius: 5px;
+}
+.card-user a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/***************** DEMANDE COMPTE PRATICIEN *****************/
+.register label{
+  color: #1F3D89;
 }
