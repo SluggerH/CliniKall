@@ -35,7 +35,7 @@ class ProContactType extends AbstractType
                             'label'=>'Ville'
                              ])
         ->add('descriptionPatient',TextType::class,[
-                                'label'=>'Précisez votre spécialité et votre parcours professionnel'
+                                'label'=>'Précisez votre spécialité'
                                  ])
         ->add('codePostal')
         ->add('phone')
