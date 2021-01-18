@@ -14,8 +14,11 @@
 
         {{ form_start(ProContactForm) }}
 
-            {{ form_row(ProContactForm.firstname) }}     
-            {{ form_row(ProContactForm.lastname) }}
+            {{ form_row(ProContactForm.lastname) }}     
+            {{ form_row(ProContactForm.firstname) }}
+            {{ form_row(ProContactForm.adress) }}
+            {{ form_row(ProContactForm.codePostal) }}
+            {{ form_row(ProContactForm.city) }}
             {{ form_row(ProContactForm.phone) }}
             {{ form_row(ProContactForm.email) }}
             {{ form_row(ProContactForm.plainPassword) }}
