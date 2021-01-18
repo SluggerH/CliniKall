@@ -22,7 +22,7 @@
                 
                 <div class="card-body card-admin">
                     <h5 class="card-title">{{ search_user.lastname }}  {{ search_user.firstname }}</h5>
-                    <h6 class="card-subtitle mb-2 text-muted"> {{ search_user.phone }}</h6>
+                    <p class="card-text"> 0{{ search_user.phone }}</p>
                     <p class="card-text">{{ search_user.email }}</p>
                     <p class="card-text">{{ search_user.adress }}</p>
                     <p class="card-text">{{ search_user.codePostal }}  {{ search_user.city }}</p>
@@ -32,7 +32,7 @@
             {% endfor %}
         </div>
 
-        <h2>Liste des users</h2>
+        {# <h2>Liste des users</h2>
         </br>
         <div class="card-group info-user-admin">
             {% for user in users %}
@@ -49,7 +49,8 @@
                     </div> 
                 {% endif %}
             {% endfor %}
-        </div>
+        </div> #}
+
     </div>
     
 {% endblock %}

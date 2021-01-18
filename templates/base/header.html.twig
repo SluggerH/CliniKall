@@ -18,6 +18,11 @@
                 <a class="btn btn-sm btn-outline-secondary btn-compte" href="{{path('app_register')}}" type="button">Créer un compte</a> <!-- border bleu typo bleu -->
 
                 {% if app.user %}
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <a class="btn btn-sm btn-outline-secondary btn-connexion" type="button" href="{{ path('admin') }}">Page Admin</a><!-- fond bleu typo blanche -->
+                    {% else %}
+                        <a class="btn btn-sm btn-outline-secondary btn-connexion" type="button" href="{{ path('user') }}">Mon compte</a><!-- fond bleu typo blanche -->
+                    {% endif %}
                     <a class="btn btn-sm btn-outline-secondary btn-connexion" type="button" href="{{ path('app_logout') }}">Déconnexion</a><!-- fond bleu typo blanche -->
                 {% else %}
                     <a class="btn btn-sm btn-outline-secondary btn-connexion" type="button" href="{{ path('app_login') }}">Se connecter</a> <!-- fond bleu typo blanche -->
