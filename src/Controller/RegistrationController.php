@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\User;
 use App\Repository\UserRepository;
 use App\Form\RegistrationFormType;
+use App\Form\ProContactType;
 use App\Security\AppAuthenticator;
 use App\Security\EmailVerifier;
 use App\Service\EmailService;
@@ -47,7 +48,7 @@ class RegistrationController extends AbstractController
                 )
             );
 
-            $user->setRoles(['ROLE_USER']);
+            $user->setRoles(["ROLE_USER"]);
 
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
@@ -96,5 +97,50 @@ class RegistrationController extends AbstractController
         $this->addFlash('success', "Votre compte est bien validé.");
 
         return $this->redirectToRoute('app_login');
+    }
+
+    /**
+     * @Route("/inscription_pro", name="pro_register")
+     */
+    public function registerPro(Request $request, UserPasswordEncoderInterface $passwordEncoder,EmailService $emailService): Response
+    {
+        $user = new User();
+        $form = $this->createForm(ProContactType::class, $user);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            // encode the plain password
+            $user->setPassword(
+                $passwordEncoder->encodePassword(
+                    $user,
+                    $form->get('plainPassword')->getData()
+                )
+            );
+
+            $user->setRoles(["ROLE_PRO"]);
+
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($user);
+            $entityManager->flush();
+
+            $token=$this->encryptor->encrypt($user->getEmail());
+
+            // generate a signed url and email it to the user
+             $emailService->send([
+                'to'=>$user->getEmail(),
+                'subject'=>"Demande d'inscription sur ClinKall",
+                'template'=>'email/accuse_reception_pro.email.twig',
+                'context'=>[
+                     'link' => $this->generateUrl('app_verify_email', [ 'token' => $token ], UrlGeneratorInterface::ABSOLUTE_URL)
+                          ]
+                ]);
+                // do anything else you need here, like send an email
+                 $this->addFlash('success',"Votre demande d'inscription est prise en compte.Consultez votre boîte mail.");
+            
+                 return $this->redirectToRoute('accueil');
+        }
+        return $this->render('registration/pro_contact.html.twig', [
+            'ProContactForm' => $form->createView(),
+        ]);
     }
 }
