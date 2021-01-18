@@ -6,7 +6,7 @@
 
     <div class="container connexion">
 
-        <form method="post">
+        <form class="co-gauche" method="post">
             {% if error %}
                 <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
             {% endif %}
@@ -25,12 +25,19 @@
             <label class="champs-login" for="inputPassword">Mot de passe</label>
             <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Votre mot de passe" required>
 
-            <input type="checkbox" id="remember_me" name="_remember_me" checked/>
-            <label class="champs-login" for="remember_me">Rester connecté</label>
+            <div class="container resterco-mdp">
+                <div>
+                    <input type="checkbox" id="remember_me" name="_remember_me" checked/>
+                    <label class="champs-login" for="remember_me">Rester connecté</label>
+                </div>
+                <div>
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                    <a href="{{ path('password_reset')}}">Mot de passe oublié?</a>
+                </div>
+            </div>
+            
 
-            <input type="hidden" name="_csrf_token"
-                value="{{ csrf_token('authenticate') }}"
-            >
+            
 
             {#
                 Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
@@ -42,14 +49,17 @@
                     </label>
                 </div>
             #}
-            </br>
-            <button class="btn btn-lg btn-primary" type="submit">Se connecter</button>
+
+            <br>
+
+            <button class="container btn btn-login" type="submit">Se connecter</button>
+            <br>
+            <p class="inscription-co">Vous n'avez pas encore de compte ? <a href="{{ path('app_register')}}">S'inscrire</a></p>
         </form>
 
-        </br>
-
-        <a href="{{ path('app_register')}}" class="btn btn-success">Pas encore inscrit?</a>
-        <a href="{{ path('password_reset')}}" class="btn btn-danger">Mot de passe oublié?</a> 
+        <div class="co-droite">
+            <img src="../images/connexion.jpg" alt="">
+        </div>
 
     </div>
 
