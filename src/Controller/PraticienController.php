@@ -53,4 +53,20 @@ class PraticienController extends AbstractController
             'userproDens'=>$userproDens
         ]);
     }
+
+    /**
+     * @Route("/praticien/{id}", name="praticien")
+     */
+    public function pagePraticien(UserRepository $userRepository,$id,User $user): Response
+    {
+        $user=$userRepository->find($id);
+
+        $em=$this->getDoctrine()->getManager();
+        $em->flush();
+
+        return $this->render('praticien/praticien.html.twig',[
+                 'id'=>$id,
+                 'user'=>$user
+        ]);
+    }   
 }
