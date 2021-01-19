@@ -18,6 +18,7 @@
         </br>
 
         <div class="card-group info-user-admin">
+          {% if search_users is defined %}
             {% for search_user in search_users %}
 
                 <div class="card-body card-admin">
@@ -30,6 +31,7 @@
                 </div>
                      
             {% endfor %}
+         {% endif %}   
         </div>
 
        <h2>Liste des Praticiens</h2>

@@ -30,14 +30,16 @@ class AdminController extends AbstractController
         $search=$request->query->get('search');
         if($search){
             $search_users=$userRepository->search($search);
-        } else{
-             $search_users=$userRepository->findAll();
-        }          
-
-        return $this->render('admin/admin.html.twig', [
-            'search_users'=>$search_users,
-            'userpros'=>$userpros
-        ]);
+            return $this->render('admin/admin.html.twig', [
+                'search_users'=>$search_users,
+                'userpros'=>$userpros
+            ]);
+        } else
+        {
+            return $this->render('admin/admin.html.twig', [
+               'userpros'=>$userpros
+            ]);
+        }
     }
 
     /**
@@ -56,7 +58,7 @@ class AdminController extends AbstractController
 
     }
 
-        /**
+    /**
      * @Route("/admin_validate_user/{id}", name="admin_validate_user")
      */
     public function validateUser(User $user) 
