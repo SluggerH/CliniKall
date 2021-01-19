@@ -55,7 +55,7 @@
             <div class="card">
                 <h3 style="color:#1F3D89; text-align:center;">Dr. {{ userproMed.lastname|upper }}</h3>
                 <img class="card-img-top" src="../images/portrait.jpg" alt="">
-                <button class="btn btn-pt btn-primary">En savoir plus</button>
+                <a class="btn btn-pt btn-primary" href="{{ path('praticien', {id: userproMed.id}) }}">En savoir plus</a>
             </div>
             {% endif %}
           {% endfor %}  
@@ -74,7 +74,7 @@
                     <div class="card">
                         <h3 style="color:#1F3D89; text-align:center;">Dr. {{ userproMed.lastname|upper }}</h3>
                         <img class="card-img-top" src="../images/portrait.jpg" alt="">
-                        <button class="btn btn-pt btn-primary">En savoir plus</button>
+                        <a class="btn btn-pt btn-primary" href="{{ path('praticien', {id: userproMed.id}) }}">En savoir plus</a>
                     </div>
                     {% endif %} 
                   {% endfor %}
@@ -141,7 +141,7 @@
             <div class="card">
                 <h3 style="color:#1F3D89; text-align:center;">Dr. {{ userproKin.lastname|upper }}</h3>
                 <img class="card-img-top" src="../images/portrait.jpg" alt="">
-                <button class="btn btn-pt btn-primary">En savoir plus</button>
+                <a class="btn btn-pt btn-primary" href="{{ path('praticien', {id: userproKin.id}) }}">En savoir plus</a>
             </div>
             {% endif %} 
           {% endfor %} 
@@ -170,7 +170,7 @@
                       <div class="card">
                            <h3 style="color:#1F3D89; text-align:center;">Dr. {{ userproDen.lastname|upper }}</h3>
                            <img class="card-img-top" src="../images/portrait.jpg" alt="">
-                           <button class="btn btn-pt btn-primary">En savoir plus</button>
+                           <a class="btn btn-pt btn-primary" href="{{ path('praticien', {id: userproDen.id}) }}">En savoir plus</a>
                         </div>
                        {% endif %} 
                     {% endfor %}
