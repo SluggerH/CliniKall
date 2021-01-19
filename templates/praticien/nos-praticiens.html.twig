@@ -49,20 +49,7 @@
         </div>
 
 
-        <!-- card -->
-      {#}   <div class="container md-2">
-<<<<<<< HEAD
-                {% for userproMed in userproMeds %}
-                    {% if userproMed.isVerified %}
-                    <div class="card">
-                        <h3 style="color:#1F3D89; text-align:center;">Dr. {{ userproMed.lastname|upper }}</h3>
-                        <img class="card-img-top" src="../images/portrait.jpg" alt="">
-                        <button class="btn btn-pt btn-primary">En savoir plus</button>
-                    </div>
-                    {% endif %}
-                {% endfor %}  
-            </div> #}
-=======
+
           {% for userproMed in userproMeds %}
             {% if userproMed.isVerified %}
             <div class="card">
@@ -73,7 +60,6 @@
             {% endif %}
           {% endfor %}  
         </div> #}
->>>>>>> 3e52a43b3b6496c24b128f0191c79c1d1f361e88
 
         {# Début Carrousel MEDECIN #}
         <div id="carouselMedecin" class="carousel slide" data-ride="carousel">

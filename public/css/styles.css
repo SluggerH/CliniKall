@@ -72,15 +72,6 @@
     font-weight: bold;
   }
   
-<<<<<<< HEAD
-
-=======
-  .navbar-light .navbar-nav .nav-item a.nav-link :active {
-    color: #1F3D89 !important;
-
-  }
->>>>>>> a6cf394be819000a4ec68864f6faef38ada4c2b2
-
   .nav-link:hover{
     color:#7ECDED;
   }
