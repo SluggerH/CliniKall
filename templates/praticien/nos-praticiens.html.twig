@@ -51,16 +51,16 @@
 
         <!-- card -->
       {#}   <div class="container md-2">
-          {% for userproMed in userproMeds %}
-            {% if userproMed.isVerified %}
-            <div class="card">
-                <h3 style="color:#1F3D89; text-align:center;">Dr. {{ userproMed.lastname|upper }}</h3>
-                <img class="card-img-top" src="../images/portrait.jpg" alt="">
-                <button class="btn btn-pt btn-primary">En savoir plus</button>
-            </div>
-            {% endif %}
-          {% endfor %}  
-        </div> #}
+                {% for userproMed in userproMeds %}
+                    {% if userproMed.isVerified %}
+                    <div class="card">
+                        <h3 style="color:#1F3D89; text-align:center;">Dr. {{ userproMed.lastname|upper }}</h3>
+                        <img class="card-img-top" src="../images/portrait.jpg" alt="">
+                        <button class="btn btn-pt btn-primary">En savoir plus</button>
+                    </div>
+                    {% endif %}
+                {% endfor %}  
+            </div> #}
 
         {# Début Carrousel MEDECIN #}
         <div id="carouselMedecin" class="carousel slide" data-ride="carousel">
@@ -72,7 +72,7 @@
                 <li data-target="#carouselMedecin" data-slide-to="2"></li>
             </ol>
 
-            <div class="carousel-inner-">
+            <div class="carousel-inner">
                 <div class="carousel-item active">
                   {% for userproMed in userproMeds %}
                      {% if userproMed.isVerified %}
