@@ -61,6 +61,7 @@
     color: #1F3D89;
     padding-right: 12px;
   }
+
   .navbar-light .navbar-nav .nav-link:hover{
     color: #7ECDED;
   }
@@ -69,9 +70,19 @@
     color: #1F3D89;
     font-size: large;
   } 
+  
+
+  .navbar-light .navbar-nav .nav-item a.nav-link :active {
+    color: #1F3D89 !important;
+
+  }
 
   .nav-link:hover{
     color:#7ECDED;
+  }
+  .navbar-light .navbar-nav .nav-link :active{
+    color:#7ECDED;
+
   }
 
   .btn-nav{
@@ -105,11 +116,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: #1F3D89;
   }
 
   .nav-link{
     padding: 0px 5px 0px 5px;
+  }
+
+  .nav-2.nav-item.nav-link .active{
+    color: #1F3D89;
   }
 
 /***************** ACCUEIL *****************/
@@ -438,22 +452,41 @@
     border-radius: 0px 0px 5px 5px;
   }
 
-  /* Carrousel card */
+/************* CARROUSEL */
 
-  .carousel {
-    padding-bottom: 60px;
-}
-  .carousel-item-next, .carousel-item-prev, .carousel-item.active {
+  .container.medecin, .carousel.slide, .carousel-item.active,
+  .carousel-item-next,
+  .carousel-item-prev {
     display: flex;
     justify-content: center;
+    padding-bottom: 40px;
+  }
+  .container.kine, .carousel.slide, .carousel-item.active,
+  .carousel-item-next,
+  .carousel-item-prev {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 40px;
+  }
+  
+  .container.dentiste, .carousel.slide, .carousel-item.active,
+  .carousel-item-next,
+  .carousel-item-prev {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 40px;
   }
 
-  /* Fin Carrousel kiné */
-
-  
 
 
-  .clinique-regroupe, .medecin, .kine, .dentiste, .quelque-info{
+
+
+
+
+
+/***********INFORMATIONS***********/
+  /* Quelques informations */
+    .clinique-regroupe, .medecin, .kine, .dentiste, .quelque-info{
     padding: 30px;
     display: flex;
     align-items: center;
@@ -467,6 +500,7 @@
     text-align: center;
     margin-bottom: 60px;
   }
+
   .cls-2, .qi-2{
     display: flex;
   }
@@ -476,6 +510,7 @@
     color: #1F3D89;
     font-weight: medium;
   }
+
   .md-1 h2, .dt-1 h2{
     color: white;
     font-size: 25px;
@@ -615,10 +650,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 40px;
     max-width: 960px;
     background: #1F3D89;
 
+  }
+
+  .p-4 {
+    padding: 2.5rem 2.5rem 1rem 2.5rem!important;
   }
 
   /* Partie link */
@@ -704,6 +743,7 @@
 .connexion .inscription-co{
   text-align: center;
 }
+
 
 /***************** ADMIN *****************/
 .h1-espace-admin, .info-user-admin p, .info-user-admin h5, .info-user-admin h6{
