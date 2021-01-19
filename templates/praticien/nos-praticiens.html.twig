@@ -48,6 +48,7 @@
             <hr color="#FFFFFF" width="70px">
         </div>
 
+
         <!-- card -->
       {#}   <div class="container md-2">
           {% for userproMed in userproMeds %}
@@ -61,14 +62,18 @@
           {% endfor %}  
         </div> #}
 
-        <div id="carouselExampleIndicatorsMedecin" class="carousel slideMedecin" data-ride="carousel">
-            <ol class="carousel-indicators-Medecin">
-                <li data-target="#carouselExampleIndicatorsMedecin" data-slide-to="0" class="active-Medecin"></li>
-                <li data-target="#carouselExampleIndicatorsMedecin" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicatorsMedecin" data-slide-to="2"></li>
+        {# Début Carrousel MEDECIN #}
+        <div id="carouselMedecin" class="carousel slide" data-ride="carousel">
+
+            {# Dindicators MEDECIN #}
+            <ol class="carousel-indicators">
+                <li data-target="#carouselMedecin" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselMedecin" data-slide-to="1"></li>
+                <li data-target="#carouselMedecin" data-slide-to="2"></li>
             </ol>
-            <div class="carousel-inner-Medecin">
-                <div class="carousel-item activeMedecin">
+
+            <div class="carousel-inner-">
+                <div class="carousel-item active">
                   {% for userproMed in userproMeds %}
                      {% if userproMed.isVerified %}
                     <div class="card">
@@ -79,48 +84,62 @@
                     {% endif %} 
                   {% endfor %}
                 </div>
+
+                {# CARROUSEL ITEM 1#}
                 <div class="carousel-item">
+                    {# Card 1 #}
                     <div class="card">
-                        <h3 style="color:#1F3D89; text-align:center;">Dr.JAILMAL</h3>
+                        <h3 style="color:#1F3D89; text-align:center;">Dr.LEPLIN</h3>
                         <img class="card-img-top" src="../images/portrait.jpg" alt="">
                         <button class="btn btn-pt btn-primary">En savoir plus</button>
                     </div>
+
+                    {# Card 2 #}
                     <div class="card">
-                        <h3 style="color:#1F3D89; text-align:center;">Dr.JAILMAL</h3>
+                        <h3 style="color:#1F3D89; text-align:center;">Dr.LEPLIN</h3>
                         <img class="card-img-top" src="../images/portrait.jpg" alt="">
                         <button class="btn btn-pt btn-primary">En savoir plus</button>
                     </div>
+
+                    {# Card 3 #}
                     <div class="card">
-                        <h3 style="color:#1F3D89; text-align:center;">Dr.JAILMAL</h3>
+                        <h3 style="color:#1F3D89; text-align:center;">Dr.LEPLIN</h3>
                         <img class="card-img-top" src="../images/portrait.jpg" alt="">
                         <button class="btn btn-pt btn-primary">En savoir plus</button>
                     </div>
                 </div>
+
+                {# CARROUSEL ITEM 2#}
                 <div class="carousel-item">
+                    {# Card 1 #}
                     <div class="card">
-                        <h3 style="color:#1F3D89; text-align:center;">Dr.JAILMAL</h3>
+                        <h3 style="color:#1F3D89; text-align:center;">Dr.METZER</h3>
                         <img class="card-img-top" src="../images/portrait.jpg" alt="">
                         <button class="btn btn-pt btn-primary">En savoir plus</button>
                     </div>
+
+                    {# Card 2 #}
                     <div class="card">
-                        <h3 style="color:#1F3D89; text-align:center;">Dr.JAILMAL</h3>
+                        <h3 style="color:#1F3D89; text-align:center;">Dr.METZER</h3>
                         <img class="card-img-top" src="../images/portrait.jpg" alt="">
                         <button class="btn btn-pt btn-primary">En savoir plus</button>
                     </div>
+
+                    {# Card 3 #}
                     <div class="card">
-                        <h3 style="color:#1F3D89; text-align:center;">Dr.JAILMAL</h3>
+                        <h3 style="color:#1F3D89; text-align:center;">Dr.METZER</h3>
                         <img class="card-img-top" src="../images/portrait.jpg" alt="">
                         <button class="btn btn-pt btn-primary">En savoir plus</button>
                     </div>
                 </div>
             </div>
-            <a class="carousel-control-prev-Medecin" href="#carouselExampleIndicatorsMedecin" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon-Medecin" aria-hidden="true"></span>
-                <span class="sr-only-Medecin">Previous</span>
+            <a class="carousel-control-prev" href="#carouselMedecin" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
             </a>
-            <a class="carousel-control-next-Medecin" href="#carouselExampleIndicatorsMedecin" role="button" data-slide="next">
-                <span class="carousel-control-next-icon-Medecin" aria-hidden="true"></span>
-                <span class="sr-only-Medecin">Next</span>
+            <a class="carousel-control-next" href="#carouselMedecin" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
             </a>
         </div>
 
@@ -144,8 +163,9 @@
                 <a class="btn btn-pt btn-primary" href="{{ path('praticien', {id: userproKin.id}) }}">En savoir plus</a>
             </div>
             {% endif %} 
-          {% endfor %} 
+          {% endfor %}
         </div>
+
     </div>
 
     <!-- carousel Dentiste -->
@@ -156,13 +176,16 @@
             <hr color="#FFFFFF" width="70px">
         </div>
 
-        <!-- card -->
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        {# Début Carrousel DENTISTE #}
+        <div id="carouselDentiste" class="carousel slide" data-ride="carousel">
+
+            {# Dindicators DENTISTE #}
             <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                <li data-target="#dentcarouselDentisteiste" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselDentiste" data-slide-to="1"></li>
+                <li data-target="#carouselDentiste" data-slide-to="2"></li>
             </ol>
+
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     {% for userproDen in userproDens %}
@@ -175,46 +198,60 @@
                        {% endif %} 
                     {% endfor %}
                 </div>
+
+                {# CARROUSEL ITEM 1#}
                 <div class="carousel-item">
+                    {# Card 1 #}
                     <div class="card">
-                        <h3 style="color:#1F3D89; text-align:center;">Dr.JAILMAL</h3>
+                        <h3 style="color:#1F3D89; text-align:center;">Dr.LEPLIN</h3>
                         <img class="card-img-top" src="../images/portrait.jpg" alt="">
                         <button class="btn btn-pt btn-primary">En savoir plus</button>
                     </div>
+
+                    {# Card 2 #}
                     <div class="card">
-                        <h3 style="color:#1F3D89; text-align:center;">Dr.JAILMAL</h3>
+                        <h3 style="color:#1F3D89; text-align:center;">Dr.LEPLIN</h3>
                         <img class="card-img-top" src="../images/portrait.jpg" alt="">
                         <button class="btn btn-pt btn-primary">En savoir plus</button>
                     </div>
+
+                    {# Card 3 #}
                     <div class="card">
-                        <h3 style="color:#1F3D89; text-align:center;">Dr.JAILMAL</h3>
+                        <h3 style="color:#1F3D89; text-align:center;">Dr.LEPLIN</h3>
                         <img class="card-img-top" src="../images/portrait.jpg" alt="">
                         <button class="btn btn-pt btn-primary">En savoir plus</button>
                     </div>
                 </div>
+
+                {# CARROUSEL ITEM 2#}
                 <div class="carousel-item">
+                    {# Card 1 #}
                     <div class="card">
-                        <h3 style="color:#1F3D89; text-align:center;">Dr.JAILMAL</h3>
+                        <h3 style="color:#1F3D89; text-align:center;">Dr.METZER</h3>
                         <img class="card-img-top" src="../images/portrait.jpg" alt="">
                         <button class="btn btn-pt btn-primary">En savoir plus</button>
                     </div>
+
+                    {# Card 2 #}
                     <div class="card">
-                        <h3 style="color:#1F3D89; text-align:center;">Dr.JAILMAL</h3>
+                        <h3 style="color:#1F3D89; text-align:center;">Dr.METZER</h3>
                         <img class="card-img-top" src="../images/portrait.jpg" alt="">
                         <button class="btn btn-pt btn-primary">En savoir plus</button>
                     </div>
+
+                    {# Card 3 #}
                     <div class="card">
-                        <h3 style="color:#1F3D89; text-align:center;">Dr.JAILMAL</h3>
+                        <h3 style="color:#1F3D89; text-align:center;">Dr.METZER</h3>
                         <img class="card-img-top" src="../images/portrait.jpg" alt="">
                         <button class="btn btn-pt btn-primary">En savoir plus</button>
                     </div>
                 </div>
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <a class="carousel-control-prev" href="#carouselDentiste" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="sr-only">Previous</span>
             </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <a class="carousel-control-next" href="#carouselDentiste" role="button" data-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
             </a>
