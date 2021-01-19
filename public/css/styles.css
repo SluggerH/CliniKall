@@ -64,9 +64,10 @@
     color: #7ECDED;
   }
 
-  .navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+  .active{
     color: #1F3D89;
     font-size: large;
+    font-weight: bold;
   }
 
   .nav-link:hover{
