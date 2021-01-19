@@ -69,21 +69,13 @@
   .active{
     color: #1F3D89;
     font-size: large;
-<<<<<<< HEAD
     font-weight: bold;
   }
-=======
-  } 
-<<<<<<< HEAD
   
-
   .navbar-light .navbar-nav .nav-item a.nav-link :active {
     color: #1F3D89 !important;
 
   }
-=======
->>>>>>> cb7c66b78939c490933399fe3cb976567f7f5ceb
->>>>>>> dedf23273cbfe1f5147b7dbd3bdce42078cdafdf
 
   .nav-link:hover{
     color:#7ECDED;
@@ -140,7 +132,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 35vh;
+    height: 40vh;
     position: relative;
   }
   span{
@@ -269,7 +261,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 35vh;
+    height: 40vh;
     position: relative;
   }
   span{
@@ -305,7 +297,6 @@
     background-color: #1F3D89;
     color: white;
   }
-
 
   .clinique-regroupe, .clinique-lieu-soins, .quelque-info{
     padding: 30px;
@@ -411,12 +402,13 @@
   }
 
 /***************** PRATICIEN *****************/
+
   .praticiens{
     background-image: url('/images/praticien.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 35vh;
+    height: 40vh;
     position: relative;
   }
   span{
@@ -462,14 +454,14 @@
 
 /************* CARROUSEL */
 
-  .container.medecin, .carousel.slide, .carousel-item.active,
+  .medecin, .carousel.slide, .carousel-item.active,
   .carousel-item-next,
   .carousel-item-prev {
     display: flex;
     justify-content: center;
     padding-bottom: 40px;
   }
-  .container.kine, .carousel.slide, .carousel-item.active,
+  .kine, .carousel.slide, .carousel-item.active,
   .carousel-item-next,
   .carousel-item-prev {
     display: flex;
@@ -477,7 +469,7 @@
     padding-bottom: 40px;
   }
   
-  .container.dentiste, .carousel.slide, .carousel-item.active,
+  .dentiste, .carousel.slide, .carousel-item.active,
   .carousel-item-next,
   .carousel-item-prev {
     display: flex;
@@ -485,8 +477,12 @@
     padding-bottom: 40px;
   }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> a6cf394be819000a4ec68864f6faef38ada4c2b2
 /***********INFORMATIONS***********/
+
   /* Quelques informations */
     .clinique-regroupe, .medecin, .kine, .dentiste, .quelque-info{
     padding: 30px;
@@ -745,7 +741,6 @@
 .connexion .inscription-co{
   text-align: center;
 }
-
 
 /***************** ADMIN *****************/
 .h1-espace-admin, .info-user-admin p, .info-user-admin h5, .info-user-admin h6{

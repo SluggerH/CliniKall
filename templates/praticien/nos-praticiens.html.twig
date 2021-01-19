@@ -48,9 +48,17 @@
             <hr color="#FFFFFF" width="70px">
         </div>
 
+<<<<<<< HEAD
         
         {# Exemple card 
         <div class="container md-2">
+=======
+
+        <!-- card -->
+      {#}   <div class="container md-2">
+          {% for userproMed in userproMeds %}
+            {% if userproMed.isVerified %}
+>>>>>>> a6cf394be819000a4ec68864f6faef38ada4c2b2
             <div class="card">
                 <h3 style="color:#1F3D89; text-align:center;">Dr.JAILMAL</h3>
                 <img class="card-img-top" src="../images/portrait.jpg" alt="">
@@ -68,9 +76,9 @@
                 <li data-target="#carouselMedecin" data-slide-to="2"></li>
             </ol>
 
-            {# Inner - active - 1 #}
-            <div class="carousel-inner">
+            <div class="carousel-inner-">
                 <div class="carousel-item active">
+<<<<<<< HEAD
 
                     {# Card 1 #}
                     <div class="card">
@@ -89,6 +97,12 @@
                     {# Card 3 #}
                     <div class="card">
                         <h3 style="color:#1F3D89; text-align:center;">Dr.JAILMAL</h3>
+=======
+                  {% for userproMed in userproMeds %}
+                     {% if userproMed.isVerified %}
+                    <div class="card">
+                        <h3 style="color:#1F3D89; text-align:center;">Dr. {{ userproMed.lastname|upper }}</h3>
+>>>>>>> a6cf394be819000a4ec68864f6faef38ada4c2b2
                         <img class="card-img-top" src="../images/portrait.jpg" alt="">
                         <button class="btn btn-pt btn-primary">En savoir plus</button>
                     </div>
@@ -162,6 +176,7 @@
             <hr color="#1F3D89" width="70px">
         </div>
 
+<<<<<<< HEAD
         {# Début Carrousel Kine #}
         <div id="carouselKine" class="carousel slide" data-ride="carousel">
 
@@ -254,6 +269,19 @@
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
             </a>
+=======
+        <!-- card -->
+        <div class="container k-2">
+          {% for userproKin in userproKins %}
+             {% if userproKin.isVerified %}
+            <div class="card">
+                <h3 style="color:#1F3D89; text-align:center;">Dr. {{ userproKin.lastname|upper }}</h3>
+                <img class="card-img-top" src="../images/portrait.jpg" alt="">
+                <button class="btn btn-pt btn-primary">En savoir plus</button>
+            </div>
+            {% endif %} 
+          {% endfor %}
+>>>>>>> a6cf394be819000a4ec68864f6faef38ada4c2b2
         </div>
 
     </div>
@@ -275,6 +303,7 @@
                 <li data-target="#carouselDentiste" data-slide-to="1"></li>
                 <li data-target="#carouselDentiste" data-slide-to="2"></li>
             </ol>
+<<<<<<< HEAD
 
             {# Inner - active - 1 #}
             <div class="carousel-inner ">
@@ -300,6 +329,20 @@
                         <img class="card-img-top" src="../images/portrait.jpg" alt="">
                         <button class="btn btn-pt btn-primary">En savoir plus</button>
                     </div>
+=======
+
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    {% for userproDen in userproDens %}
+                       {% if userproDen.isVerified %}
+                      <div class="card">
+                           <h3 style="color:#1F3D89; text-align:center;">Dr. {{ userproDen.lastname|upper }}</h3>
+                           <img class="card-img-top" src="../images/portrait.jpg" alt="">
+                           <button class="btn btn-pt btn-primary">En savoir plus</button>
+                        </div>
+                       {% endif %} 
+                    {% endfor %}
+>>>>>>> a6cf394be819000a4ec68864f6faef38ada4c2b2
                 </div>
 
                 {# CARROUSEL ITEM 1#}
