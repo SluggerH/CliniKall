@@ -5,46 +5,48 @@
 {% block body %}
 
     <div class="container espace-admin">
-        <h1 class="h1-espace-admin">Espace Administrateur</h1>
-        </br>
 
-        <form method="GET">
-                <div class="row mb-3">
-                    <input type="text" class="form-control" name="search" id="inputEmail3" placeholder="Rechercher avec un Nom, Prénom ou Email">
-                    <br><br>
-                    <button class="btn btn-primary">Rechercher</button>
-                </div>
-        </form>
-        </br>
+        <div class="admin-rechercher">
+            <h1 class="h1-espace-admin">Bienvenue sur votre espace Admin</h1>
+            </br>
+            {# Formulaire de recherche praticien ou user #}
+            <form method="GET" class="container admin-recherche">
+                    <div class="row mb-3">
+                        <input type="text" class="form-control" name="search" id="inputEmail3" placeholder="Rechercher avec un Nom, Prénom ou Email">
+                        <br><br>
+                        <button class="btn btn-primary">Rechercher</button>
+                    </div>
+            </form>
+            </br>
+            <div class="card-group info-user-admin">
+            {% if search_users is defined %}
+                {% for search_user in search_users %}
 
-        <div class="card-group info-user-admin">
-          {% if search_users is defined %}
-            {% for search_user in search_users %}
-
-                <div class="card-body card-admin">
-                    <h5 class="card-title">{{ search_user.lastname }}  {{ search_user.firstname }}</h5>
-                    <p class="card-text"> 0{{ search_user.phone }}</p>
-                    <p class="card-text">{{ search_user.email }}</p>
-                    <p class="card-text">{{ search_user.adress }}</p>
-                    <p class="card-text">{{ search_user.codePostal }}  {{ search_user.city }}</p>
-                    <a href="{{ path('admin_delete_user',{id:search_user.id}) }}" class="btn btn-danger">Supprimer le compte</a>
-                </div>
-                     
-            {% endfor %}
-         {% endif %}   
+                    <div class="card-body card-admin">
+                        <h5 class="card-title">{{ search_user.lastname }}  {{ search_user.firstname }}</h5>
+                        <p class="card-text"> 0{{ search_user.phone }}</p>
+                        <p class="card-text">{{ search_user.email }}</p>
+                        <p class="card-text">{{ search_user.adress }}</p>
+                        <p class="card-text">{{ search_user.codePostal }}  {{ search_user.city }}</p>
+                        <a href="{{ path('admin_delete_user',{id:search_user.id}) }}" class="btn btn-danger">Supprimer le compte</a>
+                    </div>
+                        
+                {% endfor %}
+            {% endif %}   
+            </div>
         </div>
+        
+        <div class="admin-liste">
+            <h2 class="h2-espace-admin">Liste des Praticiens :</h2>
+            </br>
+            <div class="card-group info-user-admin">
+                {% for userpro in userpros %}
+                    {% if userpro.descriptionPatient == 'dentiste' or userpro.descriptionPatient == 'kiné' or userpro.descriptionPatient == 'médecin' %}
 
-       <h2>Liste des Praticiens</h2>
-       <h1 class="h1-espace-admin">Liste des Praticiens</h1>
-        </br>
-        <div class="card-group info-user-admin">
-            {% for userpro in userpros %}
-               {% if userpro.descriptionPatient == 'dentiste' or userpro.descriptionPatient == 'kiné' or userpro.descriptionPatient == 'médecin' %}
-                    <div class="card" style="width: 18rem;">
-                        <div class="card-body">
+                        <div class="card-body card-admin">
                             <h5 class="card-title">{{ userpro.lastname }}  {{ userpro.firstname }}</h5>
                             <p class="card-title"> {{ userpro.descriptionPatient }}</p>
-                            <h6 class="card-title"> {{ userpro.phone }}</h6>
+                            <h6 class="card-title"> 0{{ userpro.phone }}</h6>
                             <p class="card-text">{{ userpro.email }}</p>
                             <p class="card-text">{{ userpro.adress }}</p>
                             <p class="card-text">{{ userpro.codePostal }}  {{ userpro.city }}</p>
@@ -53,9 +55,11 @@
                             <a href="{{ path('admin_validate_user',{id:userpro.id}) }}" class="btn btn-primary">Valider l'inscription</a>
                             {% endif %}
                         </div>
-                    </div> 
-                {% endif %}
-            {% endfor %}
-         </div>  
-    
+
+                    {% endif %}
+                {% endfor %}
+            </div> 
+        </div>
+    </div>
+        
 {% endblock %}

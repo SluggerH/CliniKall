@@ -122,6 +122,8 @@
   }
 
 /***************** ACCUEIL *****************/
+
+/* Bloc recherche praticien */
   .accueil{
     background-image: url('/images/accueil.jpg');
     background-position: center;
@@ -163,6 +165,8 @@
     background-color: #1F3D89;
     color: white;
   }
+
+/* Global accueil */
   .comment-marche, .clinique-apporte, .reserve-ligne{
     padding: 30px;
     display: flex;
@@ -170,6 +174,15 @@
     justify-content: center;
     flex-direction: column;
   }
+  .cm-1, .ca-1, .rl-1{
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  .ca-2, .rl-2{
+    display: flex;
+  }
+
+/* Bloc comment marche */
   .cm-1 p{
     font-size: 25px;
     color: #1F3D89;
@@ -179,8 +192,18 @@
     font-size: 16px;
     color: #1F3D89;
     font-weight: medium;
+    text-align: center;
+  }
+  .cm-2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
+/* Bloc clinique apporte */
+  .clinique-apporte{
+    background-color: #3589C9;
+  }
   .ca-1 p{
     font-size: 25px;
     color: #FFFFFF;
@@ -192,43 +215,10 @@
     font-weight: medium;
     text-align: justify;
   }
-
-  .rl-1 p{
-    font-size: 25px;
-    color: #1F3D89;
-    font-weight: medium;
-  }
-  .rl-2 p{
-    font-size: 16px;
-    color: #1F3D89;
-    font-weight: medium;
-    text-align: justify;
-  }
-
-  .cm-1, .ca-1, .rl-1{
-    text-align: center;
-    margin-bottom: 60px;
-  }
-  .cm-2{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .cm-2 p{
-    text-align: center;
-  }
   .picto-ac{
     margin: 20px;
     width: auto;
     height: 150px;
-  }
-
-  .ca-2, .rl-2{
-    display: flex;
-  }
-
-  .clinique-apporte{
-    background-color: #3589C9;
   }
   .photo-ac{
     width: 50%;
@@ -250,7 +240,22 @@
     margin: 10px 40px 10px 40px;
   }
 
+/* Bloc reserver en ligne */
+  .rl-1 p{
+    font-size: 25px;
+    color: #1F3D89;
+    font-weight: medium;
+  }
+  .rl-2 p{
+    font-size: 16px;
+    color: #1F3D89;
+    font-weight: medium;
+    text-align: justify;
+  }
+
 /***************** A PROPOS *****************/
+
+/* Bloc recherche praticien */
   .a-propos{
     background-image: url('/images/salle-attente.jpg');
     background-position: center;
@@ -293,6 +298,7 @@
     color: white;
   }
 
+/* Global page à propos */
   .clinique-regroupe, .clinique-lieu-soins, .quelque-info{
     padding: 30px;
     display: flex;
@@ -307,10 +313,13 @@
     text-align: center;
     margin-bottom: 60px;
   }
-  .cls-2, .qi-2{
+  .cls-2{
     display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
+/* Bloc clinique regroupe */
   .clr-1 p{
     font-size: 25px;
     color: #1F3D89;
@@ -336,6 +345,7 @@
     text-align: center;
   }
 
+/* Bloc description clinique lieu soins */
   .cls-1 p{
     font-size: 25px;
     color: #FFFFFF;
@@ -346,25 +356,6 @@
     color: #FFFFFF;
     font-weight: medium;
     text-align: justify;
-  }
-
-  .qi-1 p{
-    font-size: 25px;
-    color: #1F3D89;
-    font-weight: medium;
-  }
-  .qi-2 p{
-    font-size: 16px;
-    color: #1F3D89;
-    font-weight: medium;
-    text-align: justify;
-  }
-
-  .photo-ap{
-    width: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
   .photo-ap img{
     width: 100%;
@@ -379,25 +370,41 @@
   .desc-ap p{
     margin: 10px 40px 10px 40px;
   }
-  .infos-ap{
+
+/***************** QUELQUES INFOS (Apropos/Praticien) *****************/
+  .infos-pt{
     width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  .infos-ap p{
+  .infos-pt p{
     font-size: 13px;
   }
-  .infos-ap h3{
+  .infos-pt h3{
     font-size: 16px;
     color: #1F3D89;
   }
   .info{
     padding: 20px;
   }
+  .info-pt{
+    margin: 20px;
+  }
+  .qi-1 p{
+    font-size: 25px;
+    color: #1F3D89;
+    font-weight: medium;
+  }
+  .qi-2 p{
+    font-size: 16px;
+    color: #1F3D89;
+    font-weight: medium;
+  }
 
-/***************** PRATICIEN *****************/
+/***************** PRATICIENS *****************/
 
+/* Bloc recherche praticien */
   .praticiens{
     background-image: url('/images/praticien.jpg');
     background-position: center;
@@ -439,43 +446,9 @@
     background-color: #1F3D89;
     color: white;
   }
-  .card{
-    width: 20%;
-    margin: 10px;
-  }
-  .btn-pt{
-    border-radius: 0px 0px 5px 5px;
-  }
 
-/************* CARROUSEL */
-
-  .medecin, .carousel.slide, .carousel-item.active,
-  .carousel-item-next,
-  .carousel-item-prev {
-    display: flex;
-    justify-content: center;
-    padding-bottom: 40px;
-  }
-  .kine, .carousel.slide, .carousel-item.active,
-  .carousel-item-next,
-  .carousel-item-prev {
-    display: flex;
-    justify-content: center;
-    padding-bottom: 40px;
-  }
-  
-  .dentiste, .carousel.slide, .carousel-item.active,
-  .carousel-item-next,
-  .carousel-item-prev {
-    display: flex;
-    justify-content: center;
-    padding-bottom: 40px;
-  }
-
-/***********INFORMATIONS***********/
-
-  /* Quelques informations */
-    .clinique-regroupe, .medecin, .kine, .dentiste, .quelque-info{
+/* Global praticiens */
+  .clinique-regroupe, .medecin, .kine, .dentiste, .quelque-info{
     padding: 30px;
     display: flex;
     align-items: center;
@@ -489,22 +462,33 @@
     text-align: center;
     margin-bottom: 60px;
   }
-
   .cls-2, .qi-2{
     display: flex;
   }
-
   .clr-1 p, .k-1 h2{
     font-size: 25px;
     color: #1F3D89;
     font-weight: medium;
   }
-
   .md-1 h2, .dt-1 h2{
     color: white;
     font-size: 25px;
     font-weight: medium;
   }
+
+/* Design des cards */
+  .card{
+    width: 15%;
+    margin: 10px;
+  }
+  .card h3{
+    font-size: 16px;
+  }
+  .btn-pt{
+    border-radius: 0px 0px 5px 5px;
+  }
+
+/* Bloc client regroupe */
   .picto-pt{
     margin: 20px;
     width: auto;
@@ -525,34 +509,20 @@
     text-align: center;
   }
 
-  .qi-1 p{
-    font-size: 25px;
-    color: #1F3D89;
-    font-weight: medium;
-  }
-  .qi-2 p{
-    font-size: 16px;
-    color: #1F3D89;
-    font-weight: medium;
-    text-align: justify;
-  }
-
-  .infos-pt{
-    width: 50%;
+/* Carrousel */
+  .medecin, .kine, .dentiste, .carousel.slide, .carousel-item.active,
+  .carousel-item-next,
+  .carousel-item-prev {
     display: flex;
     justify-content: center;
-    align-items: center;
+    padding-bottom: 40px;
   }
-  .infos-pt p{
-    font-size: 13px;
-  }
-  .infos-pt h3{
-    font-size: 16px;
-    color: #1F3D89;
-  }
-  .info{
-    padding: 20px;
-  }
+
+/***************** PAGE PRATICIEN EN SAVOIR PLUS *****************/
+
+.praticien-sp{
+  color: #1F3D89;
+}
 
 /***************** NEWSLETTER *****************/
 
@@ -634,7 +604,7 @@
 
 /***************** FOOTER *****************/
 
-  /* Footer général */
+/* Footer général */
   .footer{
     display: flex;
     flex-direction: column;
@@ -649,8 +619,7 @@
     padding: 2.5rem 2.5rem 1rem 2.5rem!important;
   }
 
-  /* Partie link */
-
+/* Partie link */
   a.text-dark {
     color: #fff!important;
     font-size: 12px;
@@ -665,13 +634,13 @@
     font-size: 13px;
   }
 
-  /* Mention */
+/* Mention */
   .mentions{
     /* max-width: 960px; */
     padding: 0 103px 10px 103px;
   }
 
-  /* Copyright */
+/* Copyright */
   .copyright{
     max-width: 960px;
     font-size: 10px;
@@ -734,7 +703,7 @@
 }
 
 /***************** ADMIN *****************/
-.h1-espace-admin, .info-user-admin p, .info-user-admin h5, .info-user-admin h6{
+.h1-espace-admin, .h2-espace-admin, .info-user-admin p, .info-user-admin h5, .info-user-admin h6{
   color: #1F3D89;
 }
 .h1-espace-admin{
@@ -742,11 +711,16 @@
   align-items: center;
   justify-content: center;
 }
-
+.h2-espace-admin{
+  margin-top: 20px;
+}
 .card-admin{
   margin: 20px;
   border: 1px solid #1F3D89;
   border-radius: 5px;
+}
+.admin-recherche{
+  width: 50%;
 }
 
 /***************** USER *****************/
@@ -758,7 +732,6 @@
   align-items: center;
   justify-content: center;
 }
-
 .card-user{
   margin: 20px;
   border: 1px solid #1F3D89;
