@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -93,8 +95,14 @@ class User implements UserInterface
      */
     private $descriptionPatient;
 
+    /**
+     * @ORM\OneToMany(targetEntity=RDV::class, mappedBy="lastname")
+     */
+    private $rDVs;
+
     public function __construct() {
         $this->createdAt = new \DateTime();
+        $this->rDVs = new ArrayCollection();
     
     }
 
@@ -202,6 +210,10 @@ class User implements UserInterface
         $this->lastname = $lastname;
 
         return $this;
+    }
+
+    public function __toString(){
+        return $this->lastname.' '.$this->firstname;
     }
 
     public function getCreatedAt(): ?\DateTimeInterface
@@ -318,6 +330,36 @@ class User implements UserInterface
     public function setDescriptionPatient(?string $descriptionPatient): self
     {
         $this->descriptionPatient = $descriptionPatient;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|RDV[]
+     */
+    public function getRDVs(): Collection
+    {
+        return $this->rDVs;
+    }
+
+    public function addRDV(RDV $rDV): self
+    {
+        if (!$this->rDVs->contains($rDV)) {
+            $this->rDVs[] = $rDV;
+            $rDV->setLastname($this);
+        }
+
+        return $this;
+    }
+
+    public function removeRDV(RDV $rDV): self
+    {
+        if ($this->rDVs->removeElement($rDV)) {
+            // set the owning side to null (unless already changed)
+            if ($rDV->getLastname() === $this) {
+                $rDV->setLastname(null);
+            }
+        }
 
         return $this;
     }

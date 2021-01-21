@@ -4,21 +4,25 @@
 
 {% block body %}
 
-    <!-- section photo et rdv -->
+    {# Bloc recherche praticien #}
     <div class="container praticiens">
+
         <div class="rdv-praticiens">
+            {# Texte bloc recherche #}
             <div class="text-rh-pt">
                 <p><span>Une clinique à votre service,</span> <br>prenez rendez-vous avec <br> vos professionnels de santé</p>
             </div>
+            {# Input bloc recherche praticien #}
             <div class="form_control formu">
-                <input type="text" name="praticien" id="praticien" placeholder="Rechercher un praticien">
-                <input type="text" name="localisation" id="localisation" placeholder="Votre localisation"><br>
+                <input type="text" name="praticien" id="praticien" placeholder="Rechercher un praticien"><br>
                 <input class="rechercher" type="button" value="Rechercher">
             </div>
+
         </div>
+
     </div>
 
-    <!-- Titre et 3 images présentation de section -->
+    {# Bloc clinique regroupe #}
     <div class="container clinique-regroupe">
         <div class="container clr-1">
             <p class="">Notre clinique regrouge</p>
@@ -40,27 +44,24 @@
         </div>
     </div>
 
-    <!-- carousel Médecin -->
+    {# Bloc médecin avec carrousel #}
     <div class="container medecin">
-    <!-- fond -->
+        {# Titre et barre #}
         <div class="container md-1">
             <h2>Nos médecins</h2>
             <hr color="#FFFFFF" width="70px">
         </div>
 
-
-        <!-- card -->
-      {#}   <div class="container md-2">
-          {% for userproMed in userproMeds %}
+        {# Bloc card de présentation praticien #}
+        {# {% for userproMed in userproMeds %}
             {% if userproMed.isVerified %}
-            <div class="card">
-                <h3 style="color:#1F3D89; text-align:center;">Dr. {{ userproMed.lastname|upper }}</h3>
-                <img class="card-img-top" src="../images/portrait.jpg" alt="">
-                <button class="btn btn-pt btn-primary">En savoir plus</button>
-            </div>
+                <div class="card">
+                    <h3 style="color:#1F3D89; text-align:center;">Dr. {{ userproMed.lastname|upper }}</h3>
+                    <img class="card-img-top" src="../images/portrait.jpg" alt="">
+                    <a class="btn btn-pt btn-primary" href="{{ path('praticien', {id: userproMed.id}) }}">En savoir plus</a>
+                </div>
             {% endif %}
-          {% endfor %}  
-        </div> #}
+        {% endfor %} #}
 
         {# Début Carrousel MEDECIN #}
         <div id="carouselMedecin" class="carousel slide" data-ride="carousel">
@@ -72,14 +73,14 @@
                 <li data-target="#carouselMedecin" data-slide-to="2"></li>
             </ol>
 
-            <div class="carousel-inner-">
+            <div class="carousel-inner">
                 <div class="carousel-item active">
                   {% for userproMed in userproMeds %}
                      {% if userproMed.isVerified %}
                     <div class="card">
                         <h3 style="color:#1F3D89; text-align:center;">Dr. {{ userproMed.lastname|upper }}</h3>
                         <img class="card-img-top" src="../images/portrait.jpg" alt="">
-                        <button class="btn btn-pt btn-primary">En savoir plus</button>
+                        <a class="btn btn-pt btn-primary" href="{{ path('praticien', {id: userproMed.id}) }}">En savoir plus</a>
                     </div>
                     {% endif %} 
                   {% endfor %}
@@ -133,10 +134,14 @@
                     </div>
                 </div>
             </div>
+
+            {# Bloc fleche previus #}
             <a class="carousel-control-prev" href="#carouselMedecin" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="sr-only">Previous</span>
             </a>
+
+            {# Bloc fleche next #}
             <a class="carousel-control-next" href="#carouselMedecin" role="button" data-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
@@ -160,7 +165,7 @@
             <div class="card">
                 <h3 style="color:#1F3D89; text-align:center;">Dr. {{ userproKin.lastname|upper }}</h3>
                 <img class="card-img-top" src="../images/portrait.jpg" alt="">
-                <button class="btn btn-pt btn-primary">En savoir plus</button>
+                <a class="btn btn-pt btn-primary" href="{{ path('praticien', {id: userproKin.id}) }}">En savoir plus</a>
             </div>
             {% endif %} 
           {% endfor %}
@@ -193,7 +198,7 @@
                       <div class="card">
                            <h3 style="color:#1F3D89; text-align:center;">Dr. {{ userproDen.lastname|upper }}</h3>
                            <img class="card-img-top" src="../images/portrait.jpg" alt="">
-                           <button class="btn btn-pt btn-primary">En savoir plus</button>
+                           <a class="btn btn-pt btn-primary" href="{{ path('praticien', {id: userproDen.id}) }}">En savoir plus</a>
                         </div>
                        {% endif %} 
                     {% endfor %}
@@ -259,19 +264,22 @@
 
     </div>
 
-    <!-- container information -->
+    {# Bloc quelques informations #}
     <div class="container quelque-info">
+        {# Titre et barre #}
         <div class="container qi-1">
             <p class="">Quelques informations</p>
             <hr color="#1F3D89" width="70px">
         </div>
+        {# Information et google map #}
         <div class="container qi-2">
+            {# Informations #}
             <div class="infos-pt">
-                <div class="info">
+                <div class="info-pt">
                     <h3><span>Horaires :</span></h3>
-                    <p>Lundi : 9h-20h<br>Mardi : 9h-20h<br>Mercredi : 9h-20h<br>Jeudi : 9h-20h<br>Vendredi : 9h-20h<br>Samedi : 9h-13h<br>Dimanche : / </p>
+                    <p>Lun. : 9h-20h<br>Mar. : 9h-20h<br>Mer. : 9h-20h<br>Jeu. : 9h-20h<br>Ven. : 9h-20h<br>Sam. : 9h-13h<br>Dim. : / </p>
                 </div>
-                <div class="info">
+                <div class="info-pt">
                     <div class="info-1">
                         <h3><span>Contact :</span></h3>
                         <p>T. +33 (0)4 79 25 37 30 <br>F. +33 (0)4 79 25 37 31 <br> E.mail : contact@clinikall.com</p>
@@ -283,22 +291,28 @@
                 
                 </div>
             </div>
+            {# Google maps #}
             <div class="photo-pt">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2792.471531099307!2d5.950685515632348!3d45.58106493365869!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478ba8b9ce583115%3A0xe71b8d2cb9969737!2s139%20Rue%20de%20la%20Grande%20Chartreuse%2C%2073230%20Saint-Alban-Leysse!5e0!3m2!1sen!2sfr!4v1610619075533!5m2!1sen!2sfr" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
             </div>
+
         </div>
+
     </div>
 
-    <!-- carousel newsletter -->
+    {# Formulaire newsletter #}
     <div class="container newsletter-subscribe">
+        {# Titre et barre #}
         <div class="intro">
             <h2 class="text-center">Inscrivez vous à la newsletter</h2>
         </div>
+        {# Formulaire email #}
         <div class="formulaire-news">
             <form class="form-inline" method="post">
-            <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Inscrivez votre email ..."><button class="btn btn-primary" type="submit">Envoyer</button></div>
-        </form>
+                <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Inscrivez votre email ..."><button class="btn btn-primary" type="submit">Envoyer</button></div>
+            </form>
         </div>
+
     </div>
 
 {% endblock %}

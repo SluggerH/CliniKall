@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ user.lastname }}{% endblock %}
+
+{% block body %}
+
+<div class="container praticien-sp">
+    
+    <h1>{{ user.lastname }} {{ user.firstname }}</h1>
+
+    <p>{{ user.descriptionPatient }}</p>
+
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis dolorum possimus ipsam perspiciatis voluptates dolore mollitia numquam autem ab rem accusantium esse nostrum earum, corporis hic quas magnam sint blanditiis!</p>
+
+</div>
+
+{% endblock %}

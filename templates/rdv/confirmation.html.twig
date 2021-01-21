@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Confirmation RDV{% endblock %}
+
+{% block body %}
+
+<div class="container register text-dark">
+<h2>Confirmation de votre rendez-vous</h2>
+
+<p>Vous avez rendez-vous avec le praticien <b>{{ rdv.praticien }}</b></p>
+</br>
+<p>Date: <b>{{ rdv.day|date('d-m-Y')}}</b></p>
+</br>
+<p>Heure: <b>{{ rdv.hour }}h</b></P>
+</br>
+<p>Message: <b>{{ rdv.message }}</b>
+</br>
+<p>Vous pouvez retrouver le rendez-vous dans votre espace utilisateur.</p>
+
+
+</div>
+
+
+
+
+
+{% endblock %}
