@@ -245,7 +245,6 @@
   }
 
 /***************** A PROPOS *****************/
-
 /* Bloc recherche praticien */
   .a-propos{
     background-image: url('/images/salle-attente.jpg');
@@ -255,13 +254,8 @@
     height: 40vh;
     position: relative;
   }
-  span{
-    font-weight: bold;
-  }
-  hr{
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+  .text-rh-ap span, .text-rh-ap p{
+    display: none;
   }
   .rdv-a-propos{
     padding: 15px;
@@ -269,14 +263,8 @@
     background-color: #3589c9d0;
     position: absolute;
     top: 50%;
-    right: 30px;
-    transform: translateY(-50%)
-  }
-  .rdv-a-propos p{
-    color: white;
-  }
-  .text-rh-ap p{
-    font-size: 20px;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
   .formu input{
     border-radius: 5px;
@@ -284,7 +272,7 @@
     padding: 3px;
   }
   .rechercher{
-    margin-top: 5px;
+    margin-top: 10px;
     background-color: #1F3D89;
     color: white;
   }
@@ -308,12 +296,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
   }
 
 /* Bloc clinique regroupe */
   .clr-1 p{
-    font-size: 25px;
+    text-align: center;
     color: #1F3D89;
+    margin-top: 20px;
+    font-size: 20px;
     font-weight: medium;
   }
   .picto-ap{
@@ -322,52 +313,75 @@
     height: 150px;
   }
   .clr-2{
+    text-align: center;
+    margin-top: 10px;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
   .clr-2 img{
     border-radius: 5px;
+    width: 150px;
+    margin: 20px;
   }
   .clr-2 p{
-    font-size: 16px;
     color: #1F3D89;
+    margin-bottom: 20px;
+    font-size: 16px;
     font-weight: medium;
     text-align: center;
   }
 
 /* Bloc description clinique lieu soins */
-  .cls-1 p{
-    font-size: 25px;
-    color: #FFFFFF;
-    font-weight: medium;
-  }
-  .cls-2 p{
-    font-size: 16px;
-    color: #FFFFFF;
-    font-weight: medium;
-    text-align: justify;
-  }
-  .photo-ap img{
-    width: 100%;
-    border-radius: 5px;
-  }
-  .desc-ap{
-    width: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .desc-ap p{
-    margin: 10px 40px 10px 40px;
-  }
+.cls-1{
+  margin-bottom: 60px;
+}
+.cls-1 p{
+  font-size: 20px;
+  color: #FFFFFF;
+  font-weight: medium;
+  text-align: center;
+  padding-top: 10px;
+}
+.cls-2 p{
+  font-size: 16px;
+  color: #FFFFFF;
+  font-weight: medium;
+  text-align: justify;
+}
+.photo-ap{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.photo-ap img{
+  width: 90%;
+  border-radius: 5px;
+}
+.desc-ap{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.desc-ap p{
+  padding-bottom: 10px;
+  margin: 10px 20px 10px 20px;
+}
 
 /***************** QUELQUES INFOS (Apropos/Praticien) *****************/
   .infos-pt{
-    width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    padding-left: 15px;
+  }
+  .info-pt{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
   }
   .infos-pt p{
     font-size: 13px;
@@ -375,6 +389,14 @@
   .infos-pt h3{
     font-size: 16px;
     color: #1F3D89;
+  }
+  .photo-pt iframe{
+    width: 95%;
+  }
+  .photo-pt{
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .info{
     padding: 20px;
@@ -390,7 +412,7 @@
   .qi-2 p{
     font-size: 16px;
     color: #1F3D89;
-    font-weight: medium;
+    font-weight: medium; 
   }
 
 /***************** PRATICIENS *****************/
@@ -697,9 +719,15 @@
 }
 
 /***************** REGISTER *****************/
-
-.h1-register, .required{
+.h1-register-new, .required{
   color: #1F3D89;
+}
+.h1-register-new{
+  font-size: 20px;
+  margin: 20px 0px;
+}
+.register-new{
+  max-width: 400px;
 }
 
 /***************** CONNEXION *****************/
@@ -707,39 +735,26 @@
   border:1px solid #1F3D89;
   border-radius: 5px;
   padding: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.connexion input{
-  margin-bottom: 10px;
 }
 .champs-login, .h1-connexion, .co-gauche p{
   color: #1F3D89;
-}
-
-.co-droite{
-  width: 50%;
-}
-.co-droite img{
-  width: 100%;
-  border-radius: 5px;
-  margin-left: 20px;
-}
-.co-gauche{
-  width: 50%;
-}
-.resterco-mdp{
-  display: flex;
-  justify-content: space-between;
 }
 .btn-login{
   color: white;
   background-color: #1F3D89;
   margin-bottom: 10px;
 }
+.connexion input{
+  margin-bottom: 10px;
+}
 .connexion .inscription-co{
   text-align: center;
+}
+.co-droite{
+  text-align: center;
+}
+.co-droite img{
+  width: 300px;
 }
 
 /***************** ADMIN *****************/
@@ -787,11 +802,19 @@
 .register label{
   color: #1F3D89;
 }
+.h1-register-pro{
+  color: #1F3D89;
+  margin: 20px 0px;
+  font-size: 20px;
+}
+.formu-pro{
+  max-width: 400px;
+}
 
 /***************** RESPONSIVE *****************/
 
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 800px) {
   /******** RESPONSIVE ACCUEIL ********/
   /* Bloc recherche praticien */
   .text-rh-ac span, .text-rh-ac p{
@@ -891,6 +914,71 @@
     margin-bottom: 0px;
   }
 
+/******** RESPONSIVE APROPOS ********/
+
+/* Bloc recherche praticien */
+  .text-rh-ap span, .text-rh-ap p{
+    display: block;
+  }
+  .text-rh-ap span{
+    padding-bottom: 0px;
+  }
+  .rdv-a-propos p{
+    color: white;
+  }
+  .text-rh-ap p{
+    font-size: 20px;
+  }
+  span{
+    font-weight: bold;
+  }
+  hr{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .rdv-a-propos{
+    top: 50%;
+    left: 30px;
+    transform: translateY(-50%);
+  }
+
+/* Bloc clinique regroupe */
+  .clr-2{
+    flex-direction: row;
+    margin-top: 10px;
+  }
+
+/* Bloc description clinique lieu soins */
+  .cls-2{
+    flex-direction: row;
+  }
+  .cls-1 p{
+    font-size: 25px;
+  }
+  .photo-ap{
+    width: 50%;
+  }
+  .photo-ap img{
+    width: 100%;
+  }
+  .desc-ap{
+    width: 50%;
+  }
+  .desc-ap p{
+    margin: 10px 40px 10px 40px;
+  }
+
+/***************** QUELQUES INFOS (Apropos/Praticien) *****************/
+  .infos-pt{
+    flex-direction: row;
+  }
+  .qi-2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
 /******** RESPONSIVE RESERVATION RDV ********/
   /* Choix du praticien */
   .rdv-pt{
@@ -908,4 +996,27 @@
   .card-agenda{
     margin: 10px 10px;
   }
+
+/***************** RESPONSIVE CONNEXION *****************/
+  .connexion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .co-droite{
+    width: 50%;
+  }
+  .co-droite img{
+    width: 100%;
+    border-radius: 5px;
+    margin-left: 20px;
+  }
+  .co-gauche{
+    width: 50%;
+  }
+  .resterco-mdp{
+    display: flex;
+    justify-content: space-between;
+  }
+  
 }
