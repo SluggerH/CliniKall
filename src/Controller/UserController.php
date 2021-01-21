@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\User;
+use App\Entity\RDV;
 use App\Repository\UserRepository;
 use Symfony\Component\Security\Core\User\UserInterface;
 use App\Form\UserType;
@@ -21,15 +22,30 @@ class UserController extends AbstractController
     {
         $user=$this->getUser();
 
+        $listeusers=$userRepository->findAll();
+        $listepros=[];
+         foreach ($listeusers as $list){
+
+             if ($list->hasRole("ROLE_PRO")){
+                $listepros[]=$list;
+             }
+         }
+
         $em=$this->getDoctrine()->getManager();
         $em->flush();
 
-        $rdvs=$rdvRepository->findAll($user);
+        if ( $user->hasRole("ROLE_PRO")){
 
+           $rdvs=$user->getRdvPraticien();
+        }
+        else{
+            $rdvs=$user->getRDVs();
+        }
 
         return $this->render('user/user.html.twig', [
             'user' => $user,
-            'rdvs'=>$rdvs
+            'rdvs'=>$rdvs,
+            'listepros'=>$listepros
         ]);
     }
 
@@ -58,4 +74,6 @@ class UserController extends AbstractController
             'userForm'=>$form->createView()
         ]);
     }
+
+
 }

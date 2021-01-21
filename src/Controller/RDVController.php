@@ -9,6 +9,7 @@ use Symfony\Component\HttpFoundation\Request;
 use App\Form\RDVType;
 use App\Repository\RDVRepository;
 use App\Repository\UserRepository;
+use Symfony\Component\Security\Core\User\UserInterface;
 use App\Entity\User;
 use App\Entity\RDV;
 use DateTime;
@@ -128,6 +129,31 @@ class RDVController extends AbstractController
         return $this->render('rdv/confirmation.html.twig', [
                 'rdv'=>$rdv
         ]);
+    }
+
+        /**
+     * @Route("/rdv_delete/{id}", name="rdv_delete")
+     */
+    public function deleteRDV(UserInterface $user,RDV $rdv,$id,RDVRepository $rdvRepository) 
+    {
+          $user=$this->getUser();
+          $rdv=$rdvRepository->find($id);
+
+          if ($user->hasRole("ROLE_PRO")){
+
+            $user->removeRdvPraticien($rdv);
+          }
+          else{
+            $user->removeRDV($rdv);
+          }
+
+          $em=$this->getDoctrine()->getManager();
+          $em->flush();
+
+          $this->addFlash('success',"Le rendez-vous a bien été supprimé.");
+
+        return $this->redirectToRoute('user'); 
+
     }
 
 }
