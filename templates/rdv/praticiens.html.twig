@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Réservation praticiens{% endblock %}
+
+{% block body %}
+
+<div class="container register">
+
+                {% for listepro in listepros %}
+                <div class="mb-3">
+                    <h1 class="h1-register">{{ listepro.lastname|upper }}  {{ listepro.firstname }}...........{{ listepro.descriptionPatient|upper }}</h1>
+                   <a class="btn btn-primary" href="{{ path('reservation_agenda',{id: listepro.id,date: "tomorrow"|date('Y-m-d') }) }}">Prise de Rendez-vous avec ce praticien</a>
+                </div>
+                {% endfor %}
+ </div>               
+{% endblock %}
