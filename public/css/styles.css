@@ -42,10 +42,111 @@
       position: fixed;
       transition: all 0.5s;
   } */
+  .nav-ordi{
+    display: none;
+  }
+  
+  .nav-mobile{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .nav-brand-mobile{
+    padding:10% 0 0 5%;
+  }
+
+  .fixed-top{
+    position:relative;
+  }
+  .bg-light {
+    background-color: #fff !important;
+    
+  }
 
 
-  /*Navigation 1*/
-  .nav-1{
+  /* .navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+  a.nav-link{
+    color: #1F3D89;
+    }
+
+  .navbar-light .navbar-nav .nav-link:hover{
+    color: #7ECDED;
+  }
+
+  .active{
+    color: #1F3D89;
+    font-size: large;
+    font-weight: bold;
+  }
+  
+  .nav-link:hover{
+    color:#7ECDED;
+  }
+  .navbar-light .navbar-nav .nav-link :active{
+    color:#7ECDED;
+
+  }
+
+  .btn-nav{
+    justify-content: space-between;
+  }
+
+
+  .btn-compte{
+    border: 1px solid #1F3D89;
+    color: #1F3D89;
+    margin-right: 10px;
+  }
+  .btn-compte:hover{
+    color: #FFF!important;
+    background: #7ECDED!important;
+    border: 1px solid #7ECDED!important;
+  }
+
+  .btn-connexion{
+    background: #1F3D89;
+    color: white;
+  }
+  .btn-connexion:hover{
+    background: #7ECDED!important;
+    border: 1px solid #7ECDED!important;
+    color: white;
+  } */
+
+  /*Navigation 2*/
+  .nav-2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-link{
+    padding: 0px 5px 0px 5px;
+  }
+
+  /* .nav-2.nav-item.nav-link .active{
+    color: #1F3D89!important;
+  } */
+
+  .nav-2 a.nav-link.active {
+    color: #1F3D89!important;
+  }
+    
+@media only screen and (min-width: 842px) {
+
+  .nav-mobile{
+    display:none;
+  }
+
+  .nav-ordi{
+    display: flex; 
+    flex-direction: column;
+  }
+  /*Navigation 1 top*/
+  .container.identification{
     display: flex;
     justify-content: space-between;
   }
@@ -107,19 +208,27 @@
   }
 
   /*Navigation 2*/
-  .nav-2{
+  .container .navigation{
     display: flex;
     flex-direction: column;
     align-items: center;
+    max-width: 960px;
+
   }
 
-  .nav-link{
+  .nav-ordi .nav-link{
     padding: 0px 5px 0px 5px;
   }
 
-  .nav-2.nav-item.nav-link .active{
-    color: #1F3D89;
+  .show > .nav-link,
+    .active > .nav-link,
+    .nav-link.show,
+    .nav-link.active {
+    color: #1F3D89!important;
   }
+
+}
+
 
 /***************** ACCUEIL *****************/
 /* Bloc recherche praticien */
@@ -666,51 +775,84 @@
 
 /***************** FOOTER *****************/
 
-/* Footer général */
-  .footer{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 40px;
-    max-width: 960px;
-    background: #1F3D89;
+.footer{
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+  background: #1F3D89;
+  text-align: 
+}
 
-  }
+.informationsftr{
+  display:flex;
+  flex-direction: column;
+  text-align: left;
+}
 
-  .p-4 {
-    padding: 2.5rem 2.5rem 1rem 2.5rem!important;
-  }
+.container.informationsdivers{
+  display:flex;
+  padding-top: 20px;
+}
+
+.aproposdeclinikall{
+  padding-bottom: 20px;
+}
+
+.trouverunspe{
+  padding-bottom: 20px;
+}
+
+.recherchesfrequentes{
+  padding-bottom: 40px;
+}
 
 /* Partie link */
-  a.text-dark {
-    color: #fff!important;
-    font-size: 12px;
-  }
-  a.text-dark:hover {
-    color: #7ECDED!important;
-    text-decoration: none;
-  }
+a.text-dark {
+  color: #fff!important;
+  font-size: 12px;
+}
+a.text-dark:hover {
+  color: #7ECDED!important;
+  text-decoration: none;
+}
 
-  h5.text-uppercase{
-    padding-bottom: 15px;
-    font-size: 13px;
-  }
-
-/* Mention */
-  .mentions{
-    /* max-width: 960px; */
-    padding: 0 103px 10px 103px;
-  }
+h5.text-uppercase{
+  font-size: 13px;
+  padding-bottom:5px;
+}
 
 /* Copyright */
-  .copyright{
-    max-width: 960px;
-    font-size: 10px;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.copyright{
+  font-size: 10px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media only screen and (min-width: 842px) {
+
+  .container.informationsdivers{
+    display:flex;
+    flex: column wrap;
+    padding-top: 20px;
   }
+  .informationsftr {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+  }
+  .aproposdeclinikall {
+    padding: 20px 10px 20px 40px;
+  }
+  .trouverunspe {
+    padding: 20px 10px 20px 10px;
+  }
+  .recherchesfrequentes {
+    padding: 20px 40px 20px 10px;
+  }
+
+}
 
 /***************** PASSWORD_RESET *****************/
 
