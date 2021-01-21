@@ -40,7 +40,7 @@ class RDVController extends AbstractController
             ]);
         }else{
             $this->addFlash('danger',"Vous devez d'abord vous connecter pour prendre rdv.");
-            return $this->render('rdv/rdv.html.twig');
+            return $this->render('base/index.html.twig');
         }
     }
 

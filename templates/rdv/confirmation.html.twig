@@ -4,24 +4,23 @@
 
 {% block body %}
 
-<div class="container register text-dark">
-<h2>Confirmation de votre rendez-vous</h2>
+    <div class="container confirm-rdv text-dark">
 
-<p>Vous avez rendez-vous avec le praticien <b>{{ rdv.praticien }}</b></p>
-</br>
-<p>Date: <b>{{ rdv.day|date('d-m-Y')}}</b></p>
-</br>
-<p>Heure: <b>{{ rdv.hour }}h</b></P>
-</br>
-<p>Message: <b>{{ rdv.message }}</b>
-</br>
-<p>Vous pouvez retrouver le rendez-vous dans votre espace utilisateur.</p>
+        <h1 class="h1-espace-user">Confirmation RDV</h1>
 
+        <div class="card-group info-user">
 
-</div>
+                <div class="card-body card-user">
+                        <p class="card-title">Vous avez rendez-vous avec le praticien <b>{{ rdv.praticien }}</b></p>
+                        
+                        <p class="card-text">Date: <b>{{ rdv.day|date('d-m-Y')}}</b></p>
+                        <p class="card-text">Heure: <b>{{ rdv.hour }}h</b></P>
+                        <p class="card-text">Message: <b>{{ rdv.message }}</b>
+                        <p class="card-text">Retrouver votre rendez-vous dans votre : <a class="btn-login" href="{{ path('user') }}">Espace utilisateur</a></p>
+                </div>
+                        
+        </div>
 
-
-
-
+    </div>
 
 {% endblock %}

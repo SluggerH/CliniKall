@@ -12,7 +12,7 @@
     <nav class="navbar navbar-light bg-light">
         <form class="form-inline">
             <!-- Espace professionel -->
-            <a class="nav-link" href="{{path('register_pro')}}">Espace professionel</a>
+            <a class="nav-link" href="{{path('register_pro')}}">Inscription professionel</a>
              <!-- petit bouton -->
             <div class="btn-nav">
                 <a class="btn btn-sm btn-outline-secondary btn-compte" href="{{path('app_register')}}" type="button">Créer un compte</a> <!-- border bleu typo bleu -->
@@ -54,9 +54,20 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{ path('reservation_praticiens') }}">Prise de Rendez-vous</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Mes rdv</a>
-            </li>
+
+            {% if app.user %}
+                {% if is_granted('ROLE_USER') %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Mes rdv</a>
+                    </li>
+                {% elseif is_granted('ROLE_PRO') %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Mes rdv</a>
+                    </li>
+                {% endif %}
+                
+            {% endif %}
+            
             </ul>
         </div>
     </nav>
