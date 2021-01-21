@@ -122,7 +122,6 @@
   }
 
 /***************** ACCUEIL *****************/
-
 /* Bloc recherche praticien */
   .accueil{
     background-image: url('/images/accueil.jpg');
@@ -132,13 +131,8 @@
     height: 40vh;
     position: relative;
   }
-  span{
-    font-weight: bold;
-  }
-  hr{
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+  .text-rh-ac span, .text-rh-ac p{
+    display: none;
   }
   .rdv-accueil{
     padding: 15px;
@@ -146,14 +140,8 @@
     background-color: #3589c9d0;
     position: absolute;
     top: 50%;
-    left: 30px;
-    transform: translateY(-50%);
-  }
-  .rdv-accueil p{
-    color: white;
-  }
-  .text-rh-ac p{
-    font-size: 20px;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
   .formu input{
     border-radius: 5px;
@@ -161,53 +149,57 @@
     padding: 3px;
   }
   .rechercher{
-    margin-top: 5px;
+    margin-top: 10px;
     background-color: #1F3D89;
     color: white;
   }
 
-/* Global accueil */
-  .comment-marche, .clinique-apporte, .reserve-ligne{
-    padding: 30px;
+/* Bloc comment ça marche */
+  .comment-marche{
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     flex-direction: column;
   }
-  .cm-1, .ca-1, .rl-1{
+  .cm-1 p{
     text-align: center;
-    margin-bottom: 60px;
-  }
-  .ca-2, .rl-2{
-    display: flex;
+    color: #1F3D89;
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: medium;
   }
 
-/* Bloc comment marche */
-  .cm-1 p{
-    font-size: 25px;
-    color: #1F3D89;
-    font-weight: medium;
+  .cm-2{
+    text-align: center;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .cm-2 img{
+    width: 150px;
+    margin: 20px;
   }
   .cm-2 p{
-    font-size: 16px;
     color: #1F3D89;
-    font-weight: medium;
-    text-align: center;
-  }
-  .cm-2{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    margin-bottom: 20px;
+    font-size: 16px;
   }
 
 /* Bloc clinique apporte */
   .clinique-apporte{
     background-color: #3589C9;
   }
+  .ca-1{
+    margin-bottom: 60px;
+  }
   .ca-1 p{
-    font-size: 25px;
+    font-size: 20px;
     color: #FFFFFF;
     font-weight: medium;
+    text-align: center;
+    padding-top: 10px;
   }
   .ca-2 p{
     font-size: 16px;
@@ -215,36 +207,35 @@
     font-weight: medium;
     text-align: justify;
   }
-  .picto-ac{
-    margin: 20px;
-    width: auto;
-    height: 150px;
-  }
   .photo-ac{
-    width: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
   }
   .photo-ac img{
-    width: 100%;
+    width: 90%;
     border-radius: 5px;
   }
   .desc-ac{
-    width: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
   }
   .desc-ac p{
-    margin: 10px 40px 10px 40px;
+    padding-bottom: 10px;
+    margin: 10px 20px 10px 20px;
   }
 
-/* Bloc reserver en ligne */
+/* Bloc reserve en ligne */
+  .rl-1{
+    margin-bottom: 60px;
+  }
   .rl-1 p{
-    font-size: 25px;
+    font-size: 20px;
     color: #1F3D89;
     font-weight: medium;
+    text-align: center;
+    padding-top: 10px;
   }
   .rl-2 p{
     font-size: 16px;
@@ -529,7 +520,8 @@
 .newsletter-subscribe {
     color:#313437;
     background-color:#fff;
-    padding:50px 0;
+    padding:50px 0px 0px 0px;
+    text-align: center;
   }
   
   .newsletter-subscribe p {
@@ -538,7 +530,7 @@
   }
   
   .newsletter-subscribe h2 {
-    font-size:24px;
+    font-size:20px;
     font-weight:bold;
     margin-bottom:25px;
     line-height:1.5;
@@ -572,6 +564,7 @@
     height:45px;
     margin-right:10px;
     min-width:250px;
+    margin-bottom: 20px;
   }
   
   .newsletter-subscribe form .btn {
@@ -746,4 +739,107 @@
 /***************** DEMANDE COMPTE PRATICIEN *****************/
 .register label{
   color: #1F3D89;
+}
+
+/***************** RESPONSIVE *****************/
+
+/* Responsive accueil */
+@media only screen and (min-width: 1024px) {
+  /* Bloc recherche praticien */
+  .text-rh-ac span, .text-rh-ac p{
+    display: block;
+  }
+  .text-rh-ac span{
+    padding-bottom: 0px;
+  }
+  .rdv-accueil p{
+    color: white;
+  }
+  .text-rh-ac p{
+    font-size: 20px;
+  }
+  span{
+    font-weight: bold;
+  }
+  hr{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .rdv-accueil{
+    top: 50%;
+    left: 30px;
+    transform: translateY(-50%);
+  }
+
+/* Global accueil */
+  .comment-marche, .clinique-apporte, .reserve-ligne{
+    flex-direction: column;
+  }
+  .cm-1, .ca-1, .rl-1{
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  .ca-2, .rl-2{
+    display: flex;
+  }
+
+/* Bloc comment marche */
+  .cm-1 p{
+    font-size: 25px;
+  }
+  .cm-2 p{
+    font-size: 16px;
+    font-weight: medium;
+    text-align: center;
+  }
+  .cm-2{
+    flex-direction: row;
+    margin-top: 0px;
+  }
+  .cm-2 img{
+    width: auto;
+    height: 150px;
+  }
+  .cm-2 div{
+    margin: 0px 20px 20px 0px;
+  }
+
+/* Bloc clinique apporte */
+  
+  .ca-1 p{
+    font-size: 25px;
+    padding-top: 20px;
+  }
+  .ca-2{
+    padding-bottom: 20px;
+  }
+  .picto-ac{
+    margin: 20px;
+    width: auto;
+    height: 150px;
+  }
+  .photo-ac{
+    width: 50%;
+  }
+  .photo-ac img{
+    width: 100%;
+  }
+  .desc-ac{
+    width: 50%;
+  }
+  .desc-ac p{
+    margin: 10px 40px 10px 40px;
+  }
+
+/* Bloc reserver en ligne */
+  .rl-1 p{
+    font-size: 25px;
+    padding-top: 20px;
+  }
+
+/* Newsletter */
+  .newsletter-subscribe form .form-control {
+    margin-bottom: 0px;
+  }
 }
