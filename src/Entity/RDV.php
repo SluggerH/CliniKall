@@ -30,20 +30,21 @@ class RDV
     private $hour;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="text", nullable=true)
      */
-    private $praticien;
+    private $message;
 
     /**
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="rDVs")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $lastname;
+    private $patient;
 
     /**
-     * @ORM\Column(type="text", nullable=true)
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="rdv_praticien")
+     * @ORM\JoinColumn(nullable=false)
      */
-    private $message;
+    private $praticien;
 
     public function getId(): ?int
     {
@@ -74,29 +75,6 @@ class RDV
         return $this;
     }
 
-    public function getPraticien(): ?string
-    {
-        return $this->praticien;
-    }
-
-    public function setPraticien(string $praticien): self
-    {
-        $this->praticien = $praticien;
-
-        return $this;
-    }
-
-    public function getLastname(): ?User
-    {
-        return $this->lastname;
-    }
-
-    public function setLastname(?User $lastname): self
-    {
-        $this->lastname = $lastname;
-
-        return $this;
-    }
 
     public function getMessage(): ?string
     {
@@ -106,6 +84,30 @@ class RDV
     public function setMessage(?string $message): self
     {
         $this->message = $message;
+
+        return $this;
+    }
+
+    public function getPatient(): ?User
+    {
+        return $this->patient;
+    }
+
+    public function setPatient(?User $patient): self
+    {
+        $this->patient = $patient;
+
+        return $this;
+    }
+
+    public function getPraticien(): ?User
+    {
+        return $this->praticien;
+    }
+
+    public function setPraticien(?User $praticien): self
+    {
+        $this->praticien = $praticien;
 
         return $this;
     }

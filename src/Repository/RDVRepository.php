@@ -6,6 +6,7 @@ use App\Entity\RDV;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 use App\Entity\User;
+use DateTime;
 
 /**
  * @method RDV|null find($id, $lockMode = null, $lockVersion = null)
@@ -18,6 +19,14 @@ class RDVRepository extends ServiceEntityRepository
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, RDV::class);
+    }
+
+    public function findDateRdvPraticien(User $praticien,DateTime $date){
+     
+          return $this->findBy([
+                  'praticien'=>$praticien,
+                  'day'=>$date
+          ]);
     }
 
 

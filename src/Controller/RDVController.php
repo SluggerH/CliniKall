@@ -49,10 +49,16 @@ class RDVController extends AbstractController
      * 
      * @Route("/agenda/{id}/{date}", name="reservation_agenda")
      */
-    public function agenda(User $praticien,DateTime $date,$id,UserRepository $userRepository){
+    public function agenda(User $praticien,DateTime $date,$id,UserRepository $userRepository,RDVRepository $rdvRepository){
 
         //vérifier que $user est un praticien
         $praticien=$userRepository->find($id);
+        $liste_reserves=$rdvRepository->findDateRdvPraticien($praticien,$date);
+        $horaire_reserves=[];
+        foreach ($liste_reserves as $rdv) {
+           $horaire_reserves[]=$rdv->getHour();
+        }
+
         if ($praticien->hasRole("ROLE_PRO")){
 
 
@@ -66,8 +72,8 @@ class RDVController extends AbstractController
                 'nextday'=>$nextday,
                 'previousday'=>$previousday,
                 'praticien'=>$praticien,
-               // 'hour'=>$hour,
-                'horaires_rdvs'=>RDV::HORAIRES_RDV
+                'horaires_rdvs'=>RDV::HORAIRES_RDV,
+                'horaire_reserves'=>$horaire_reserves
 
             ]);
        }else{
@@ -81,16 +87,13 @@ class RDVController extends AbstractController
      */
     public function date(RDVType $form,Request $request,UserRepository $userRepository,$id,DateTime $date,$hour){
 
-        $user=$userRepository->find($id);
-        $lastname=$user->getLastname();
-        $firstname=$user->getFirstname();
-        $praticien=$user->__toString($lastname,$firstname);
+        $praticien=$userRepository->find($id);
 
         $rdv=new RDV();
         $rdv->setDay($date);
         $rdv->setHour($hour);
         $rdv->setPraticien($praticien);
-        $rdv->setLastname($this->getUser());
+        $rdv->setPatient($this->getUser());
 
         $form = $this->createForm(RDVType::class,$rdv);
         $form->handleRequest($request);
@@ -101,15 +104,16 @@ class RDVController extends AbstractController
             $em->persist($rdv);
             $em->flush();
 
-            $id=$rdv->getId();
 
-            $this->addFlash('success', "Votre rendez-vous est réservé.");
             return $this-> redirectToRoute ('reservation_confirmation',['id' => $rdv->getId()]);
         }
 
         return $this->render('rdv/date.html.twig', [
             'RDVForm'=>$form->createView(),
             'praticien'=>$praticien,
+            'date'=>$date,
+            'hour'=>$hour,
+            'rdv'=>$rdv
         ]);
 
     }

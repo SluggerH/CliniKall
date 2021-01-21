@@ -9,6 +9,7 @@ use App\Entity\User;
 use App\Repository\UserRepository;
 use Symfony\Component\Security\Core\User\UserInterface;
 use App\Form\UserType;
+use App\Repository\RDVRepository;
 use Symfony\Component\HttpFoundation\Request;
 
 class UserController extends AbstractController
@@ -16,15 +17,19 @@ class UserController extends AbstractController
     /**
      * @Route("/user", name="user")
      */
-    public function index(UserRepository $userRepository,UserInterface $user): Response
+    public function index(UserRepository $userRepository,UserInterface $user,RDVRepository $rdvRepository): Response
     {
         $user=$this->getUser();
 
         $em=$this->getDoctrine()->getManager();
         $em->flush();
 
+        $rdvs=$rdvRepository->findAll($user);
+
+
         return $this->render('user/user.html.twig', [
-            'user' => $user
+            'user' => $user,
+            'rdvs'=>$rdvs
         ]);
     }
 
