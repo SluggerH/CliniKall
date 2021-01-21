@@ -3,23 +3,29 @@
 {% block title %}Réservation date{% endblock %}
 
 {% block body %}
-<div class="container register text-dark">
-<div class="d-flex justify-content-between w-100">
-<a class="btn btn-primary" href="{{ path('reservation_agenda',{id: praticien.id,date: previousday|date('Y-m-d') }) }}"><i class="fas fa-arrow-left"></i>Précédent</a>
-<h1 class="h1-register">{{ date|date('d-m-Y') }}</h1>
-<a class="btn btn-primary"href="{{ path('reservation_agenda',{id: praticien.id,date: nextday|date('Y-m-d') }) }}" ><i class="fas fa-arrow-right"></i>Suivant</a>
-</div>
 
- <div class="card" style="width: 18rem;">
-    <ul class="list-group list-group-flush">
+  <div class="container register-agenda text-dark">
+
+    <div class="d-flex justify-content-between w-100 date-agenda">
+      {# Précédent #}
+      <a class="btn btn-agenda" href="{{ path('reservation_agenda',{id: praticien.id,date: previousday|date('Y-m-d') }) }}"><i class="fas fa-arrow-left"></i>Précédent</a>
+      {# Date #}
+      <h1 class="h1-register-agenda">{{ date|date('d-m-Y') }}</h1>
+      {# Suivant #}
+      <a class="btn btn-agenda"href="{{ path('reservation_agenda',{id: praticien.id,date: nextday|date('Y-m-d') }) }}" ><i class="fas fa-arrow-right"></i>Suivant</a>
+
+    </div>
+
+    <div class="date-reserver">
       {% for horaires_rdv in horaires_rdvs %}
-          <li class="list-group-item">{{ horaires_rdv }}h<a class="btn btn-success w-30" href="{{ path('reservation_date',{id: praticien.id,date: date|date('Y-m-d'),hour: horaires_rdv}) }}">Réserver</a></li>
-        {% endfor %}
-     </ul>   
-
-</div>
-</div>
-
- 
+        <div class="card card-agenda" style="width: 18rem;">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">{{ horaires_rdv }}h - <a class="btn btn-success w-30" href="{{ path('reservation_date',{id: praticien.id,date: date|date('Y-m-d'),hour: horaires_rdv}) }}">Réserver</a></li>
+            </ul>
+        </div>
+      {% endfor %}
+    </div>
+    
+  </div>
 
 {% endblock %}

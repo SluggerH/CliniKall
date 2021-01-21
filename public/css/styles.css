@@ -468,11 +468,11 @@
   }
 
 /* Design des cards */
-  .card{
+  .card-praticiens{
     width: 15%;
     margin: 10px;
   }
-  .card h3{
+  .card-praticiens h3{
     font-size: 16px;
   }
   .btn-pt{
@@ -514,6 +514,53 @@
 .praticien-sp{
   color: #1F3D89;
 }
+
+/***************** PRISE DE RDV *****************/
+  /* Choix du praticien */
+  .card-rdv-pt p, .card-rdv-pt h5, .card-rdv-pt .card-header{
+    color: #1F3D89;
+  }
+  .card-rdv-pt{
+    margin: 20px;
+  }
+  .rdv-pt{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* Choix de la date */
+  .register-agenda{
+    margin: 20px 0px;
+  }
+  .btn-agenda{
+    background-color: #1F3D89;
+    color: #FFFFFF;
+    border: 0px;
+    border-radius: 5px;
+  }
+  .h1-register-agenda{
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .card-agenda{
+    margin-top: 20px;
+  }
+  .card-agenda li{
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  /* Confirmation rdv */
+  .confirm-rdv{
+    border-radius: 5px;
+    border: 1px #1F3D89;
+  }
 
 /***************** NEWSLETTER *****************/
 
@@ -743,8 +790,9 @@
 
 /***************** RESPONSIVE *****************/
 
-/* Responsive accueil */
+
 @media only screen and (min-width: 1024px) {
+  /******** RESPONSIVE ACCUEIL ********/
   /* Bloc recherche praticien */
   .text-rh-ac span, .text-rh-ac p{
     display: block;
@@ -841,5 +889,23 @@
 /* Newsletter */
   .newsletter-subscribe form .form-control {
     margin-bottom: 0px;
+  }
+
+/******** RESPONSIVE RESERVATION RDV ********/
+  /* Choix du praticien */
+  .rdv-pt{
+    justify-content: right;
+  }
+
+  /* Choix de la date */
+  .date-reserver{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+  .card-agenda{
+    margin: 10px 10px;
   }
 }
