@@ -4,9 +4,9 @@
 
 {% block body %}
 
-        <div class="container espace-user">
+        <div class="container espace-user text-dark">
 
-        <h1 class="h1-espace-user">Mon compte</h1>
+                <h1 class="h1-espace-user">Mon compte</h1>
 
                 <div class="card-group info-user">
 
@@ -22,6 +22,22 @@
                                 <a href="{{ path('user_modify',{id:user.id}) }}" class="btn btn-danger">Modifier votre compte</a>
                         </div>
                                 
+                </div>
+        <h2>Liste de mes rendez-vous</h2>
+                <div class="card-group info-user">
+                       {% for rdv in rdvs %}
+                        <div class="card-body card-user">
+                            {% if user in listepros %}
+                                <h5 class="card-title">Patient: {{ rdv.patient.lastname|upper }} {{ rdv.patient.firstname }}</h5>
+                            {% else %}
+                               <h5 class="card-title">Praticien: {{ rdv.praticien.lastname|upper }} {{ rdv.praticien.firstname }}</h5>
+                            {% endif %}   
+                                <p class="card-text">Date : {{ rdv.day|date('d-m-Y') }}</p>
+                                <p class="card-text">Heure : {{ rdv.hour }}h</p>
+
+                                 <a href="{{ path('rdv_delete',{id:rdv.id}) }}" class="btn btn-danger">Supprimer le rendez-vous</a>
+                        </div>
+                        {% endfor %}        
                 </div>
         </div>
 

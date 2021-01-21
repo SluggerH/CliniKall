@@ -4,6 +4,7 @@
 
 {% block body %}
 <div class="container register text-dark">
+<h1 class="h1-register">Prise de RDV avec le praticien {{ praticien.firstname }}  {{ praticien.lastname|upper }}</h1>
 <div class="d-flex justify-content-between w-100">
 <a class="btn btn-primary" href="{{ path('reservation_agenda',{id: praticien.id,date: previousday|date('Y-m-d') }) }}"><i class="fas fa-arrow-left"></i>Précédent</a>
 <h1 class="h1-register">{{ date|date('d-m-Y') }}</h1>
@@ -13,13 +14,15 @@
  <div class="card" style="width: 18rem;">
     <ul class="list-group list-group-flush">
       {% for horaires_rdv in horaires_rdvs %}
-          <li class="list-group-item">{{ horaires_rdv }}h<a class="btn btn-success w-30" href="{{ path('reservation_date',{id: praticien.id,date: date|date('Y-m-d'),hour: horaires_rdv}) }}">Réserver</a></li>
+          <li class="list-group-item">{{ horaires_rdv }}h
+          {% if  not ( horaires_rdv in horaire_reserves)  %}    
+          <a class="btn btn-success w-30" href="{{ path('reservation_date',{id: praticien.id,date: date|date('Y-m-d'),hour: horaires_rdv}) }}">Réserver</a>
+        {% endif %}
+         </li>
         {% endfor %}
-     </ul>   
-
-</div>
-</div>
-
- 
+     </ul>  
+    </div>
+    
+  </div>
 
 {% endblock %}

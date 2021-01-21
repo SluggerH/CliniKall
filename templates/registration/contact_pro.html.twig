@@ -6,25 +6,27 @@
 
     <div class="container register">
        
-        <h1 class="h1-register">Demande nouveau compte Praticien</h1>
+        <h1 class="h1-register-pro">Demande nouveau compte Praticien</h1>
+        
+        <div class="formu-pro">
+            {{ form_start(ProContactForm) }}
 
-        {{ form_start(ProContactForm) }}
+                {{ form_row(ProContactForm.lastname) }}     
+                {{ form_row(ProContactForm.firstname) }}
+                {{ form_row(ProContactForm.adress) }}
+                {{ form_row(ProContactForm.codePostal) }}
+                {{ form_row(ProContactForm.city) }}
+                {{ form_row(ProContactForm.phone) }}
+                {{ form_row(ProContactForm.email) }}
+                {{ form_row(ProContactForm.plainPassword) }}
+                {{ form_row(ProContactForm.descriptionPatient) }}
+                {{ form_row(ProContactForm.agreeTerms) }}
 
-            {{ form_row(ProContactForm.lastname) }}     
-            {{ form_row(ProContactForm.firstname) }}
-            {{ form_row(ProContactForm.adress) }}
-            {{ form_row(ProContactForm.codePostal) }}
-            {{ form_row(ProContactForm.city) }}
-            {{ form_row(ProContactForm.phone) }}
-            {{ form_row(ProContactForm.email) }}
-            {{ form_row(ProContactForm.plainPassword) }}
-            {{ form_row(ProContactForm.descriptionPatient) }}
-            {{ form_row(ProContactForm.agreeTerms) }}
-
-            <button class="btn btn-primary" type="submit">Valider</button>
-            </br></br>
-        {{ form_end(ProContactForm) }}
-
+                <button class="btn btn-login" type="submit">Valider</button>
+                </br></br>
+            {{ form_end(ProContactForm) }}
+        </div>
+        
     </div>
     
 {% endblock %}

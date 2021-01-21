@@ -96,13 +96,20 @@ class User implements UserInterface
     private $descriptionPatient;
 
     /**
-     * @ORM\OneToMany(targetEntity=RDV::class, mappedBy="lastname")
+     * @ORM\OneToMany(targetEntity=RDV::class, mappedBy="patient", orphanRemoval=true)
      */
     private $rDVs;
+
+    /**
+     * @ORM\OneToMany(targetEntity=RDV::class, mappedBy="praticien", orphanRemoval=true)
+     */
+    private $rdv_praticien;
+
 
     public function __construct() {
         $this->createdAt = new \DateTime();
         $this->rDVs = new ArrayCollection();
+        $this->rdv_praticien = new ArrayCollection();
     
     }
 
@@ -346,7 +353,7 @@ class User implements UserInterface
     {
         if (!$this->rDVs->contains($rDV)) {
             $this->rDVs[] = $rDV;
-            $rDV->setLastname($this);
+            $rDV->setPatient($this);
         }
 
         return $this;
@@ -356,11 +363,43 @@ class User implements UserInterface
     {
         if ($this->rDVs->removeElement($rDV)) {
             // set the owning side to null (unless already changed)
-            if ($rDV->getLastname() === $this) {
-                $rDV->setLastname(null);
+            if ($rDV->getPatient() === $this) {
+                $rDV->setPatient(null);
             }
         }
 
         return $this;
     }
+
+    /**
+     * @return Collection|RDV[]
+     */
+    public function getRdvPraticien(): Collection
+    {
+        return $this->rdv_praticien;
+    }
+
+    public function addRdvPraticien(RDV $rdvPraticien): self
+    {
+        if (!$this->rdv_praticien->contains($rdvPraticien)) {
+            $this->rdv_praticien[] = $rdvPraticien;
+            $rdvPraticien->setPraticien($this);
+        }
+
+        return $this;
+    }
+
+    public function removeRdvPraticien(RDV $rdvPraticien): self
+    {
+        if ($this->rdv_praticien->removeElement($rdvPraticien)) {
+            // set the owning side to null (unless already changed)
+            if ($rdvPraticien->getPraticien() === $this) {
+                $rdvPraticien->setPraticien(null);
+            }
+        }
+
+        return $this;
+    }
+
+    
 }

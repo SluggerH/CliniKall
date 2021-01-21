@@ -4,26 +4,29 @@
 
 {% block body %}
 
-    <div class="container register">
+    <div class="container register-new">
     
         {% for flashError in app.flashes('verify_email_error') %}
             <div class="alert alert-danger" role="alert">{{ flashError }}</div>
         {% endfor %}
     
-        <h1 class="h1-register">Inscription nouveau compte</h1>
+        <h1 class="h1-register-new">Inscription nouveau compte</h1>
 
-        {{ form_start(registrationForm) }}
+        <div class="register-new">
+            {{ form_start(registrationForm) }}
 
-            {{ form_row(registrationForm.firstname) }}     
-            {{ form_row(registrationForm.lastname) }}
-            {{ form_row(registrationForm.phone) }}
-            {{ form_row(registrationForm.email) }}
-            {{ form_row(registrationForm.plainPassword) }}
-            {{ form_row(registrationForm.agreeTerms) }}
+                {{ form_row(registrationForm.firstname) }}     
+                {{ form_row(registrationForm.lastname) }}
+                {{ form_row(registrationForm.phone) }}
+                {{ form_row(registrationForm.email) }}
+                {{ form_row(registrationForm.plainPassword) }}
+                {{ form_row(registrationForm.agreeTerms) }}
 
-            <button class="btn btn-primary" type="submit">Valider</button>
-            </br></br>
-        {{ form_end(registrationForm) }}
+                <button class="btn btn-login" type="submit">Valider</button>
+                </br></br>
+            {{ form_end(registrationForm) }}
+        </div>
+        
     </div>
     
 {% endblock %}

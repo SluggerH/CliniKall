@@ -77,11 +77,11 @@
                 <div class="carousel-item active">
                   {% for userproMed in userproMeds %}
                      {% if userproMed.isVerified %}
-                    <div class="card">
-                        <h3 style="color:#1F3D89; text-align:center;">Dr. {{ userproMed.lastname|upper }}</h3>
-                        <img class="card-img-top" src="../images/portrait.jpg" alt="">
-                        <a class="btn btn-pt btn-primary" href="{{ path('praticien', {id: userproMed.id}) }}">En savoir plus</a>
-                    </div>
+                        <div class="card card-praticiens">
+                            <h3 style="color:#1F3D89; text-align:center;">Dr. {{ userproMed.lastname|upper }}</h3>
+                            <img class="card-img-top" src="../images/portrait.jpg" alt="">
+                            <a class="btn btn-pt btn-primary" href="{{ path('praticien', {id: userproMed.id}) }}">En savoir plus</a>
+                        </div>
                     {% endif %} 
                   {% endfor %}
                 </div>
@@ -89,21 +89,21 @@
                 {# CARROUSEL ITEM 1#}
                 <div class="carousel-item">
                     {# Card 1 #}
-                    <div class="card">
+                    <div class="card card-praticiens">
                         <h3 style="color:#1F3D89; text-align:center;">Dr.LEPLIN</h3>
                         <img class="card-img-top" src="../images/portrait.jpg" alt="">
                         <button class="btn btn-pt btn-primary">En savoir plus</button>
                     </div>
 
                     {# Card 2 #}
-                    <div class="card">
+                    <div class="card card-praticiens">
                         <h3 style="color:#1F3D89; text-align:center;">Dr.LEPLIN</h3>
                         <img class="card-img-top" src="../images/portrait.jpg" alt="">
                         <button class="btn btn-pt btn-primary">En savoir plus</button>
                     </div>
 
                     {# Card 3 #}
-                    <div class="card">
+                    <div class="card card-praticiens">
                         <h3 style="color:#1F3D89; text-align:center;">Dr.LEPLIN</h3>
                         <img class="card-img-top" src="../images/portrait.jpg" alt="">
                         <button class="btn btn-pt btn-primary">En savoir plus</button>
@@ -113,21 +113,21 @@
                 {# CARROUSEL ITEM 2#}
                 <div class="carousel-item">
                     {# Card 1 #}
-                    <div class="card">
+                    <div class="card card-praticiens">
                         <h3 style="color:#1F3D89; text-align:center;">Dr.METZER</h3>
                         <img class="card-img-top" src="../images/portrait.jpg" alt="">
                         <button class="btn btn-pt btn-primary">En savoir plus</button>
                     </div>
 
                     {# Card 2 #}
-                    <div class="card">
+                    <div class="card card-praticiens">
                         <h3 style="color:#1F3D89; text-align:center;">Dr.METZER</h3>
                         <img class="card-img-top" src="../images/portrait.jpg" alt="">
                         <button class="btn btn-pt btn-primary">En savoir plus</button>
                     </div>
 
                     {# Card 3 #}
-                    <div class="card">
+                    <div class="card card-praticiens">
                         <h3 style="color:#1F3D89; text-align:center;">Dr.METZER</h3>
                         <img class="card-img-top" src="../images/portrait.jpg" alt="">
                         <button class="btn btn-pt btn-primary">En savoir plus</button>
@@ -162,11 +162,11 @@
         <div class="container k-2">
           {% for userproKin in userproKins %}
              {% if userproKin.isVerified %}
-            <div class="card">
-                <h3 style="color:#1F3D89; text-align:center;">Dr. {{ userproKin.lastname|upper }}</h3>
-                <img class="card-img-top" src="../images/portrait.jpg" alt="">
-                <a class="btn btn-pt btn-primary" href="{{ path('praticien', {id: userproKin.id}) }}">En savoir plus</a>
-            </div>
+                <div class="card card-praticiens">
+                    <h3 style="color:#1F3D89; text-align:center;">Dr. {{ userproKin.lastname|upper }}</h3>
+                    <img class="card-img-top" src="../images/portrait.jpg" alt="">
+                    <a class="btn btn-pt btn-primary" href="{{ path('praticien', {id: userproKin.id}) }}">En savoir plus</a>
+                </div>
             {% endif %} 
           {% endfor %}
         </div>
@@ -195,11 +195,11 @@
                 <div class="carousel-item active">
                     {% for userproDen in userproDens %}
                        {% if userproDen.isVerified %}
-                      <div class="card">
-                           <h3 style="color:#1F3D89; text-align:center;">Dr. {{ userproDen.lastname|upper }}</h3>
-                           <img class="card-img-top" src="../images/portrait.jpg" alt="">
-                           <a class="btn btn-pt btn-primary" href="{{ path('praticien', {id: userproDen.id}) }}">En savoir plus</a>
-                        </div>
+                            <div class="card card-praticiens">
+                            <h3 style="color:#1F3D89; text-align:center;">Dr. {{ userproDen.lastname|upper }}</h3>
+                            <img class="card-img-top" src="../images/portrait.jpg" alt="">
+                            <a class="btn btn-pt btn-primary" href="{{ path('praticien', {id: userproDen.id}) }}">En savoir plus</a>
+                            </div>
                        {% endif %} 
                     {% endfor %}
                 </div>
@@ -207,21 +207,21 @@
                 {# CARROUSEL ITEM 1#}
                 <div class="carousel-item">
                     {# Card 1 #}
-                    <div class="card">
+                    <div class="card card-praticiens">
                         <h3 style="color:#1F3D89; text-align:center;">Dr.LEPLIN</h3>
                         <img class="card-img-top" src="../images/portrait.jpg" alt="">
                         <button class="btn btn-pt btn-primary">En savoir plus</button>
                     </div>
 
                     {# Card 2 #}
-                    <div class="card">
+                    <div class="card card-praticiens">
                         <h3 style="color:#1F3D89; text-align:center;">Dr.LEPLIN</h3>
                         <img class="card-img-top" src="../images/portrait.jpg" alt="">
                         <button class="btn btn-pt btn-primary">En savoir plus</button>
                     </div>
 
                     {# Card 3 #}
-                    <div class="card">
+                    <div class="card card-praticiens">
                         <h3 style="color:#1F3D89; text-align:center;">Dr.LEPLIN</h3>
                         <img class="card-img-top" src="../images/portrait.jpg" alt="">
                         <button class="btn btn-pt btn-primary">En savoir plus</button>
@@ -231,21 +231,21 @@
                 {# CARROUSEL ITEM 2#}
                 <div class="carousel-item">
                     {# Card 1 #}
-                    <div class="card">
+                    <div class="card card-praticiens">
                         <h3 style="color:#1F3D89; text-align:center;">Dr.METZER</h3>
                         <img class="card-img-top" src="../images/portrait.jpg" alt="">
                         <button class="btn btn-pt btn-primary">En savoir plus</button>
                     </div>
 
                     {# Card 2 #}
-                    <div class="card">
+                    <div class="card card-praticiens">
                         <h3 style="color:#1F3D89; text-align:center;">Dr.METZER</h3>
                         <img class="card-img-top" src="../images/portrait.jpg" alt="">
                         <button class="btn btn-pt btn-primary">En savoir plus</button>
                     </div>
 
                     {# Card 3 #}
-                    <div class="card">
+                    <div class="card card-praticiens">
                         <h3 style="color:#1F3D89; text-align:center;">Dr.METZER</h3>
                         <img class="card-img-top" src="../images/portrait.jpg" alt="">
                         <button class="btn btn-pt btn-primary">En savoir plus</button>

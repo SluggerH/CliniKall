@@ -16,15 +16,7 @@ class RDVType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('day',DateType::class,[
-                 'label'=>'Date'
-                 ])
-            ->add('hour',TextType::class,[
-                'label'=>'Heure'
-                 ])
-            ->add('praticien',TextType::class,[
-                'label'=>'Praticien'
-                 ])
+
             ->add('message',TextareaType::class,[
                 'label'=>'Message'
                 ])

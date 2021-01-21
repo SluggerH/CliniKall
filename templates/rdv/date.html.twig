@@ -4,17 +4,15 @@
 
 {% block body %}
 
-    <div class="container register">
-        <h1 class="h1-register">Prise de RDV</h1>
+    <div class="container register text-dark">
+        <h1 class="h1-register">Prise de RDV avec le praticien {{ rdv.praticien.firstname }}  {{ rdv.praticien.lastname|upper }}</h1>
+        <h3> le {{ rdv.day|date('d-m-Y') }} à {{ rdv.hour }}h<h3>
 
         {{ form_start(RDVForm) }}
 
-            {{ form_row(RDVForm.praticien) }}     
-            {{ form_row(RDVForm.day) }}
-            {{ form_row(RDVForm.hour) }}
             {{ form_row(RDVForm.message) }}
 
-            <button class="btn btn-primary" type="submit">Valider</button>
+            <button class="btn btn-login" type="submit">Valider</button>
             </br></br>
         {{ form_end(RDVForm) }}
 

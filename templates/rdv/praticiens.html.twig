@@ -4,13 +4,23 @@
 
 {% block body %}
 
-<div class="container register">
+    <div class="container rdv-pt">
 
-                {% for listepro in listepros %}
-                <div class="mb-3">
-                    <h1 class="h1-register">{{ listepro.lastname|upper }}  {{ listepro.firstname }}...........{{ listepro.descriptionPatient|upper }}</h1>
-                   <a class="btn btn-primary" href="{{ path('reservation_agenda',{id: listepro.id,date: "tomorrow"|date('Y-m-d') }) }}">Prise de Rendez-vous avec ce praticien</a>
+        {% for listepro in listepros %}
+            <div class="card card-rdv-pt bg-light mb-3">
+
+                <div class="card-header">{{ listepro.lastname|upper }} {{ listepro.firstname|upper }}</div>
+
+                <div class="card-body">
+                    <h5 class="card-title">{{ listepro.descriptionPatient|upper }}</h5>
+                    <p class="card-text">Spécialisé dans son domaine</p>
+                    <a class="btn btn-primary" href="{{ path('reservation_agenda',{id: listepro.id,date: "tomorrow"|date('Y-m-d') }) }}">Prendre un RDV</a>
                 </div>
-                {% endfor %}
- </div>               
+
+            </div>
+
+        {% endfor %}
+
+    </div>
+
 {% endblock %}
