@@ -4,23 +4,32 @@
 
 {% block body %}
 
+    {# Bloc recherche praticien #}
     <div class="container a-propos">
+
         <div class="rdv-a-propos">
+            {# Texte bloc recherche praticien #}
             <div class="text-rh-ap">
                 <p><span>Une clinique à votre service,</span> <br>prenez rendez-vous avec <br> vos professionnels de santé</p>
             </div>
+            {# Input bloc recherche praticien #}
             <div class="form_control formu">
-                <input type="text" name="praticien" id="praticien" placeholder="Rechercher un praticien">
-                <input type="text" name="localisation" id="localisation" placeholder="Votre localisation"><br>
+                <input type="text" name="praticien" id="praticien" placeholder="Rechercher un praticien"><br>
                 <input class="rechercher" type="button" value="Rechercher">
             </div>
+            
         </div>
+
     </div>
+
+    {# Bloc la clinique regroupe  #}
     <div class="container clinique-regroupe">
+        {# Titre et barre #}
         <div class="container clr-1">
             <p class="">Notre clinique regrouge</p>
             <hr color="#1F3D89" width="70px">
         </div>
+        {# Catégorie des praticiens #}
         <div class="container clr-2">
             <div class="clr-21">
                 <img class="picto-ap" src="../images/medecin.jpg" alt="">
@@ -35,12 +44,17 @@
                 <p>Dentiste</p>
             </div>
         </div>
+
     </div>
+
+    {# Bloc description clinique #}
     <div class="container clinique-lieu-soins">
+        {# Titre et barre #}
         <div class="container cls-1">
             <p class="">La clinique, un lieu de soins</p>
             <hr color="#FFFFFF" width="70px">
         </div>
+        {# Image et description de la clinique #}
         <div class="container cls-2">
             <div class="photo-ap">
                 <img src="../images/Clinikall.jpg" alt="">
@@ -49,19 +63,25 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </div>
         </div>
+
     </div>
+
+    {# Bloc quelques informations #}
     <div class="container quelque-info">
+        {# Titre et barre #}
         <div class="container qi-1">
             <p class="">Quelques informations</p>
             <hr color="#1F3D89" width="70px">
         </div>
+        {# Information et google map #}
         <div class="container qi-2">
-            <div class="infos-ap">
-                <div class="info">
+            {# Informations #}
+            <div class="infos-pt">
+                <div class="info-pt">
                     <h3><span>Horaires :</span></h3>
-                    <p>Lundi : 9h-20h<br>Mardi : 9h-20h<br>Mercredi : 9h-20h<br>Jeudi : 9h-20h<br>Vendredi : 9h-20h<br>Samedi : 9h-13h<br>Dimanche : / </p>
+                    <p>Lun. : 9h-20h<br>Mar. : 9h-20h<br>Mer. : 9h-20h<br>Jeu. : 9h-20h<br>Ven. : 9h-20h<br>Sam. : 9h-13h<br>Dim. : / </p>
                 </div>
-                <div class="info">
+                <div class="info-pt">
                     <div class="info-1">
                         <h3><span>Contact :</span></h3>
                         <p>T. +33 (0)4 79 25 37 30 <br>F. +33 (0)4 79 25 37 31 <br> E.mail : contact@clinikall.com</p>
@@ -73,21 +93,28 @@
                 
                 </div>
             </div>
-            <div class="photo-ap">
+            {# Google maps #}
+            <div class="photo-pt">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2792.471531099307!2d5.950685515632348!3d45.58106493365869!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478ba8b9ce583115%3A0xe71b8d2cb9969737!2s139%20Rue%20de%20la%20Grande%20Chartreuse%2C%2073230%20Saint-Alban-Leysse!5e0!3m2!1sen!2sfr!4v1610619075533!5m2!1sen!2sfr" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
             </div>
+
         </div>
+
     </div>
 
+    {# Formulaire newsletter #}
     <div class="container newsletter-subscribe">
+        {# Titre et barre #}
         <div class="intro">
             <h2 class="text-center">Inscrivez vous à la newsletter</h2>
         </div>
+        {# Formulaire email #}
         <div class="formulaire-news">
             <form class="form-inline" method="post">
-            <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Inscrivez votre email ..."><button class="btn btn-primary" type="submit">Envoyer</button></div>
-        </form>
+                <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Inscrivez votre email ..."><button class="btn btn-primary" type="submit">Envoyer</button></div>
+            </form>
         </div>
+
     </div>
     
 {% endblock %}
