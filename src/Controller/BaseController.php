@@ -52,5 +52,13 @@ class BaseController extends AbstractController
         return $this->render('base/footer.html.twig');
          
     }
+
+     /**
+     * @Route("/mentions/politique_relative", name="politique_relative")
+     */
+     public function politiqueRelative(): Response
+     {
+         return $this->render('mentions/politique_relative.html.twig');
+     }
     
 }
