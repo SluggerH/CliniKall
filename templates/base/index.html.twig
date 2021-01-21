@@ -6,7 +6,7 @@
 
     {# Bloc recherche praticien #}
     <div class="container accueil">
-
+      
         <div class="rdv-accueil">
             {# Texte bloc recherche praticien #}
             <div class="text-rh-ac">
@@ -14,12 +14,14 @@
             </div>
             {# Input bloc recherche praticien #}
             <div class="form_control formu">
-                <input type="text" name="praticien" id="praticien" placeholder="Rechercher un praticien"><br class="espace">
-                <input class="rechercher" type="button" value="Rechercher">
+                <form method="GET">
+                    <input type="text" name="search" id="praticien" placeholder="Rechercher un praticien"><br class="espace">
+                    <input class="rechercher" type="submit" value="Rechercher">
+                </form>
             </div>
 
         </div>
-
+    
     </div>
 
     {# Bloc accueil comment ça marche  #}

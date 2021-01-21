@@ -47,6 +47,7 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
           ->orWhere('cp.firstname = :search')
           ->orWhere('cp.lastname = :search')
           ->orWhere('cp.email = :search')
+          ->orWhere('cp.descriptionPatient = :search')
           ->setParameter('search',$search)
           ->getQuery()
           ->getResult();

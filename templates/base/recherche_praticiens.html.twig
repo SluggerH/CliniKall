@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Espace Admin{% endblock %}
+
+{% block body %}
+    <div class="container espace-admin">
+
+        <div class="admin-rechercher">
+            <h1 class="h1-espace-admin">Recherche de praticiens</h1>
+            </br>  
+
+            <div class="card-group info-user-admin">
+                {% for search_user in search_users %}
+
+                    <div class="card-body card-admin">
+                        <h5 class="card-title">{{ search_user.lastname }}  {{ search_user.firstname }}</h5>
+                        <p class="card-text"> 0{{ search_user.phone }}</p>
+                        <p class="card-text">{{ search_user.email }}</p>
+                        <p class="card-text">{{ search_user.adress }}</p>
+                        <p class="card-text">{{ search_user.codePostal }}  {{ search_user.city }}</p>
+                        <a href="{{ path('praticien',{id:search_user.id}) }}" class="btn btn-success">Consulter la page du praticien</a>
+                    </div>
+                        
+                {% endfor %}
+            </div>
+</div>   
+{% endblock %}         

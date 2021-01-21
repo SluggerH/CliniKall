@@ -7,13 +7,14 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\User;
 use App\Repository\UserRepository;
+use Symfony\Component\HttpFoundation\Request;
 
 class PraticienController extends AbstractController
 {
     /**
      * @Route("/nos-praticiens", name="nos_praticiens")
      */
-    public function index(UserRepository $userRepository): Response
+    public function index(UserRepository $userRepository,Request $request): Response
     {
         $userproMeds=$userRepository->findBy(
             array(
@@ -47,11 +48,18 @@ class PraticienController extends AbstractController
                     ),
                     3
                     );
-        return $this->render('praticien/nos-praticiens.html.twig',[
-            'userproMeds'=> $userproMeds,
-            'userproKins'=>$userproKins,
-            'userproDens'=>$userproDens
-        ]);
+
+        $search=$request->query->get('search');
+        if ($search){
+            return $this-> redirectToRoute ('recherche',['search' => $search]);
+         }
+         else{
+            return $this->render('praticien/nos-praticiens.html.twig',[
+                 'userproMeds'=> $userproMeds,
+                 'userproKins'=>$userproKins,
+                 'userproDens'=>$userproDens
+            ]);
+        }
     }
 
     /**
