@@ -36,36 +36,27 @@
                             <a class="nav-link" href="#">Mes rendez-vous</a>
                         </li>
                         <li class="nav-item">
-                            <a class="btn btn-sm btn-outline-secondary btn-connzexion" type="button" href="{{ path('admin') }}">Page Admin</a>
+                            <a class="nav-link" href="{{ path('admin') }}">Page Admin</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{path('register_pro')}}">Inscription professionel</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{path('app_register')}}">Créer un compte</a> <!-- border bleu typo bleu -->
+
+                            {% if app.user %}
+
+                                {% if is_granted('ROLE_ADMIN') %}
+                                    <a class="nav-link" href="{{ path('admin') }}">Page Admin</a>
+                                {% else %}
+                                    <a class="nav-link" href="{{ path('user') }}">Mon compte</a>
+                                {% endif %}
+                                <a class="nav-link" href="{{ path('app_logout') }}">Déconnexion</a>
+                                {% else %}
+                                    <a class="nav-link" href="{{ path('app_login') }}">Se connecter</a> 
+                                {% endif %}
                         </li>
                     </ul>
-                    
-    <nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand" href="#">
-        <!-- Logo -->
-        <a href="{{ path('accueil') }}"><img src="/images/Clinikall 150x40.svg" width="250" alt=""></a>
-    </a>
-    </nav>
-    <!-- Boutons -->
-    <nav class="navbar navbar-light bg-light">
-        <form class="form-inline">
-            <!-- Espace professionel -->
-            <a class="nav-link" href="{{path('register_pro')}}">Inscription professionel</a>
-             <!-- petit bouton -->
-            <div class="btn-nav">
-                <a class="btn btn-sm btn-outline-secondary btn-compte" href="{{path('app_register')}}" type="button">Créer un compte</a> <!-- border bleu typo bleu -->
-
-                {% if app.user %}
-
-                    {% if is_granted('ROLE_ADMIN') %}
-                        <a class="btn btn-sm btn-outline-secondary btn-connzexion" type="button" href="{{ path('admin') }}">Page Admin</a>
-                    {% else %}
-                        <a class="btn btn-sm btn-outline-secondary btn-connexion" type="button" href="{{ path('user') }}">Mon compte</a>
-                    {% endif %}
-                    <a class="btn btn-sm btn-outline-secondary btn-connexion" type="button" href="{{ path('app_logout') }}">Déconnexion</a>
-                    {% else %}
-                        <a class="btn btn-sm btn-outline-secondary btn-connexion" type="button" href="{{ path('app_login') }}">Se connecter</a> 
-                    {% endif %}
                 </div>
             </nav>
         </nav>
