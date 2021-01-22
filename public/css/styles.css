@@ -440,8 +440,8 @@
     height: 40vh;
     position: relative;
   }
-  span{
-    font-weight: bold;
+  .text-rh-pt p {
+    display: none;
   }
   hr{
     position: absolute;
@@ -454,22 +454,20 @@
     background-color: #3589c9d0;
     position: absolute;
     top: 50%;
-    left: 30px;
-    transform: translateY(-50%)
+    left: 50%;
+    transform: translate(-50%, -50%)
   }
   .rdv-praticiens p{
     color: white;
   }
-  .text-rh-pt p{
-    font-size: 20px;
-  }
+  
   .formu input{
     border-radius: 5px;
     border: 0px;
     padding: 3px;
   }
   .rechercher{
-    margin-top: 5px;
+    margin-top: 10px;
     background-color: #1F3D89;
     color: white;
   }
@@ -481,16 +479,30 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    text-align: center;
   }
   .medecin, .dentiste{
     background-color: #3589C9;
   }
-  .clr-1, .md-1, .k-1, .dt-1, .qi-1{
+
+  .clr-1 p {
+    text-align: center;
+    color: #1F3D89;
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: medium;
+  }
+   .clr-1, .cls1, .qi-1{
     text-align: center;
     margin-bottom: 60px;
   }
-  .cls-2, .qi-2{
+  
+  .cls-2{
     display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
   }
   .clr-1 p, .k-1 h2{
     font-size: 25px;
@@ -502,14 +514,16 @@
     font-size: 25px;
     font-weight: medium;
   }
+  
+  
 
 /* Design des cards */
   .card-praticiens{
     width: 15%;
-    margin: 10px;
+    margin: 5px;
   }
   .card-praticiens h3{
-    font-size: 16px;
+    font-size: 14px;
   }
   .btn-pt{
     border-radius: 0px 0px 5px 5px;
@@ -517,7 +531,7 @@
 
 /* Bloc client regroupe */
   .picto-pt{
-    margin: 20px;
+    margin: 10px;
     width: auto;
     height: 150px;
   }
@@ -1092,6 +1106,49 @@ h5.text-uppercase{
     justify-content: center;
     align-items: center;
   }
+/********  Responsive NOS PRATICIENS ********/
+  .praticiens{
+    background-image: url('/images/praticien.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 40vh;
+    position: relative;
+  }
+  span{
+    font-weight: bold;
+  }
+  hr{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .rdv-praticiens{
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #3589c9d0;
+    position: absolute;
+    top: 50%;
+    left: 30px;
+    transform: translateY(-50%)
+  }
+  .rdv-praticiens p{
+    color: white;
+  }
+  .text-rh-pt p{
+    font-size: 20px;
+  }
+  .formu input{
+    border-radius: 5px;
+    border: 0px;
+    padding: 3px;
+  }
+  .rechercher{
+    margin-top: 5px;
+    background-color: #1F3D89;
+    color: white;
+  }
+
 
 /******** RESPONSIVE RESERVATION RDV ********/
   /* Choix du praticien */
@@ -1132,8 +1189,7 @@ h5.text-uppercase{
     display: flex;
     justify-content: space-between;
   }
-  
-}
+
 
 /******* RESPONSIVE FOOTER ******/
   .container.informationsdivers{
