@@ -11,7 +11,7 @@
 
             <div class="card-group info-user-admin">
                 {% for search_user in search_users %}
-
+                    {% if search_user.isVerified %}
                     <div class="card-body card-admin">
                         <h5 class="card-title">{{ search_user.lastname }}  {{ search_user.firstname }}</h5>
                         <p class="card-text"> 0{{ search_user.phone }}</p>
@@ -20,7 +20,7 @@
                         <p class="card-text">{{ search_user.codePostal }}  {{ search_user.city }}</p>
                         <a href="{{ path('praticien',{id:search_user.id}) }}" class="btn btn-success">Consulter la page du praticien</a>
                     </div>
-                        
+                    {% endif %}    
                 {% endfor %}
             </div>
 </div>   
