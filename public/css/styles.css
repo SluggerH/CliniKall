@@ -42,9 +42,7 @@
       position: fixed;
       transition: all 0.5s;
   } */
-  .nav-ordi{
-    display: none;
-  }
+  
   
   .nav-mobile{
     display: flex;
@@ -135,99 +133,6 @@
     color: #1F3D89!important;
   }
     
-@media only screen and (min-width: 842px) {
-
-  .nav-mobile{
-    display:none;
-  }
-
-  .nav-ordi{
-    display: flex; 
-    flex-direction: column;
-  }
-  /*Navigation 1 top*/
-  .container.identification{
-    display: flex;
-    justify-content: space-between;
-  }
-  .bg-light {
-    background-color: #fff !important;
-  }
-
-  .navbar-expand-lg .navbar-nav .nav-link {
-    padding-right: 1rem;
-    padding-left: 1rem;
-  }
-  a.nav-link{
-    color: #1F3D89;
-    padding-right: 12px;
-  }
-
-  .navbar-light .navbar-nav .nav-link:hover{
-    color: #7ECDED;
-  }
-
-  .active{
-    color: #1F3D89;
-    font-size: large;
-    font-weight: bold;
-  }
-  
-  .nav-link:hover{
-    color:#7ECDED;
-  }
-  .navbar-light .navbar-nav .nav-link :active{
-    color:#7ECDED;
-
-  }
-
-  .btn-nav{
-    justify-content: space-between;
-  }
-
-
-  .btn-compte{
-    border: 1px solid #1F3D89;
-    color: #1F3D89;
-    margin-right: 10px;
-  }
-  .btn-compte:hover{
-    color: #FFF!important;
-    background: #7ECDED!important;
-    border: 1px solid #7ECDED!important;
-  }
-
-  .btn-connexion{
-    background: #1F3D89;
-    color: white;
-  }
-  .btn-connexion:hover{
-    background: #7ECDED!important;
-    border: 1px solid #7ECDED!important;
-    color: white;
-  }
-
-  /*Navigation 2*/
-  .container .navigation{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 960px;
-
-  }
-
-  .nav-ordi .nav-link{
-    padding: 0px 5px 0px 5px;
-  }
-
-  .show > .nav-link,
-    .active > .nav-link,
-    .nav-link.show,
-    .nav-link.active {
-    color: #1F3D89!important;
-  }
-
-}
 
 
 /***************** ACCUEIL *****************/
@@ -780,7 +685,6 @@
   flex-direction: column;
   margin-top: 40px;
   background: #1F3D89;
-  text-align: 
 }
 
 .informationsftr{
@@ -830,29 +734,6 @@ h5.text-uppercase{
   justify-content: center;
 }
 
-@media only screen and (min-width: 842px) {
-
-  .container.informationsdivers{
-    display:flex;
-    flex: column wrap;
-    padding-top: 20px;
-  }
-  .informationsftr {
-    display: flex;
-    flex-direction: row;
-    text-align: center;
-  }
-  .aproposdeclinikall {
-    padding: 20px 10px 20px 40px;
-  }
-  .trouverunspe {
-    padding: 20px 10px 20px 10px;
-  }
-  .recherchesfrequentes {
-    padding: 20px 40px 20px 10px;
-  }
-
-}
 
 /***************** PASSWORD_RESET *****************/
 
@@ -1056,6 +937,97 @@ h5.text-uppercase{
     margin-bottom: 0px;
   }
 
+/******** HEADER ********/
+  .nav-mobile{
+    display:none;
+  }
+
+  .nav-ordi{
+    display: flex; 
+    flex-direction: column;
+  }
+  /*Navigation 1 top*/
+  .container.identification{
+    display: flex;
+    justify-content: space-between;
+  }
+  .bg-light {
+    background-color: #fff !important;
+  }
+
+  .navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+  a.nav-link{
+    color: #1F3D89;
+    padding-right: 12px;
+  }
+
+  .navbar-light .navbar-nav .nav-link:hover{
+    color: #7ECDED;
+  }
+
+  .active{
+    color: #1F3D89;
+    font-size: large;
+    font-weight: bold;
+  }
+  
+  .nav-link:hover{
+    color:#7ECDED;
+  }
+  .navbar-light .navbar-nav .nav-link :active{
+    color:#7ECDED;
+
+  }
+
+  .btn-nav{
+    justify-content: space-between;
+  }
+
+
+  .btn-compte{
+    border: 1px solid #1F3D89;
+    color: #1F3D89;
+    margin-right: 10px;
+  }
+  .btn-compte:hover{
+    color: #FFF!important;
+    background: #7ECDED!important;
+    border: 1px solid #7ECDED!important;
+  }
+
+  .btn-connexion{
+    background: #1F3D89;
+    color: white;
+  }
+  .btn-connexion:hover{
+    background: #7ECDED!important;
+    border: 1px solid #7ECDED!important;
+    color: white;
+  }
+
+  /*Navigation 2*/
+  .container .navigation{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 960px;
+
+  }
+
+  .nav-ordi .nav-link{
+    padding: 0px 5px 0px 5px;
+  }
+
+  .show > .nav-link,
+    .active > .nav-link,
+    .nav-link.show,
+    .nav-link.active {
+    color: #1F3D89!important;
+  }
+
 /******** RESPONSIVE APROPOS ********/
 
 /* Bloc recherche praticien */
@@ -1161,4 +1133,26 @@ h5.text-uppercase{
     justify-content: space-between;
   }
   
+}
+
+/******* RESPONSIVE FOOTER ******/
+  .container.informationsdivers{
+    display:flex;
+    flex: column wrap;
+    padding-top: 20px;
+  }
+  .informationsftr {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+  }
+  .aproposdeclinikall {
+    padding: 20px 10px 20px 40px;
+  }
+  .trouverunspe {
+    padding: 20px 10px 20px 10px;
+  }
+  .recherchesfrequentes {
+    padding: 20px 40px 20px 10px;
+  }
 }
