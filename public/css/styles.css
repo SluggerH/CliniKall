@@ -443,7 +443,7 @@
     height: 40vh;
     position: relative;
   }
-  .text-rh-pt p {
+  .text-rh-pt span, .text-rh-pt p{
     display: none;
   }
   hr{
@@ -1055,8 +1055,8 @@
     height: 40vh;
     position: relative;
   }
-  span{
-    font-weight: bold;
+  .text-rh-pt span, .text-rh-pt p{
+    display: block;
   }
   hr{
     position: absolute;
@@ -1129,10 +1129,6 @@
     display: flex;
     justify-content: space-between;
   }
-<<<<<<< HEAD
-
-=======
->>>>>>> 809d4824ae00d3096c640d4234523f32c1ba9687
 
 /******* RESPONSIVE FOOTER ******/
   .container.informationsdivers{
