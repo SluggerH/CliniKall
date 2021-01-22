@@ -1,17 +1,15 @@
-<!-- Nav ordi -->
-<div class="nav-ordi">
-
-    <!-- Nav 1 ordi -->
+<div class="container menu_bg">
+<!-- Nav 1 ordi -->
     <div class="container identification">
+
         <nav class="navbar navbar-light bg-light">
-        <a class="navbar-brand" href="#">
-        <!-- Logo -->
+            <!-- Logo -->
             <a href="{{ path('accueil') }}"><img src="/images/Clinikall 150x40.svg" width="250" alt=""></a>
-        </a>
         </nav>
+
         <!-- Boutons -->
-        <nav class="navbar navbar-light bg-light">
-            <form class="form-inline">
+        <nav class="navbar navbar-light bg-light navbar-1">
+            <form class="form-inline btn-nav-rp">
                 <!-- Espace professionel -->
                 <a class="nav-link" href="{{path('register_pro')}}">Inscription professionnelle</a>
                 <!-- petit bouton -->
@@ -24,9 +22,9 @@
                         {% else %}
                             <a class="btn btn-sm btn-outline-secondary btn-connexion" type="button" href="{{ path('user') }}">Mon compte</a>
                         {% endif %}
-                        <a class="btn btn-sm btn-outline-secondary btn-connexion" type="button" href="{{ path('app_logout') }}">Déconnexion</a>
+                            <a class="btn btn-sm btn-outline-secondary btn-connexion" type="button" href="{{ path('app_logout') }}">Déconnexion</a>
                     {% else %}
-                        <a class="btn btn-sm btn-outline-secondary btn-connexion" type="button" href="{{ path('app_login') }}">Se connecter</a> 
+                            <a class="btn btn-sm btn-outline-secondary btn-connexion" type="button" href="{{ path('app_login') }}">Se connecter</a> 
                     {% endif %}
                 </div>
             </form>
@@ -35,9 +33,9 @@
     <!-- Nav1 Fin-->
 
 
-<!-- Nav2 -->
+    <!-- Nav2 -->
     <div class="container nav-2" style="color: white">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="container navbar nav-2-rp navbar-expand-lg navbar-light bg-light">
             
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -74,7 +72,8 @@
             </div>
         </nav>
     </div>
-<div>
+</div>
+    
 <!-- Fin nav ordi -->
 
 
