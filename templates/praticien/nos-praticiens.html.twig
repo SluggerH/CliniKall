@@ -154,23 +154,93 @@
 
     <!-- carousel Kiné -->
     <div class="container kine">
-    <!-- fond -->
+        <!-- fond -->
         <div class="container k-1">
             <h2>Nos kinésitherapeutes</h2>
             <hr color="#1F3D89" width="70px">
         </div>
 
-        <!-- card -->
-        <div class="container k-2">
-          {% for userproKin in userproKins %}
-             {% if userproKin.isVerified %}
-                <div class="card card-praticiens">
-                    <h3 style="color:#1F3D89; text-align:center;">Dr. {{ userproKin.lastname|upper }}</h3>
-                    <img class="card-img-top" src="../images/portrait.jpg" alt="">
-                    <a class="btn btn-pt btn-primary" href="{{ path('praticien', {id: userproKin.id}) }}">En savoir plus</a>
+        {# Début Carrousel KINE #}
+        <div id="carouselKine" class="carousel slide" data-ride="carousel">
+
+            {# Dindicators KINE #}
+            <ol class="carousel-indicators">
+                <li data-target="#carouselKine" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselKine" data-slide-to="1"></li>
+                <li data-target="#carouselKine" data-slide-to="2"></li>
+            </ol>
+            
+            <div class="carousel-inner">
+            <!-- card -->
+                <div class="carousel-item active">
+                    {% for userproKin in userproKins %}
+                        {% if userproKin.isVerified %}
+                            <div class="card card-praticiens">
+                                <h3 style="color:#1F3D89; text-align:center;">Dr. {{ userproKin.lastname|upper }}</h3>
+                                <img class="card-img-top" src="../images/portrait.jpg" alt="">
+                                <a class="btn btn-pt btn-primary" href="{{ path('praticien', {id: userproKin.id}) }}">En savoir plus</a>
+                            </div>
+                        {% endif %} 
+                    {% endfor %}
                 </div>
-            {% endif %} 
-          {% endfor %}
+
+                {# CARROUSEL ITEM 1#}
+                <div class="carousel-item">
+                    {# Card 1 #}
+                    <div class="card card-praticiens">
+                        <h3 style="color:#1F3D89; text-align:center;">Dr.LEPLIN</h3>
+                        <img class="card-img-top" src="../images/portrait.jpg" alt="">
+                        <button class="btn btn-pt btn-primary">En savoir plus</button>
+                    </div>
+
+                    {# Card 2 #}
+                    <div class="card card-praticiens">
+                        <h3 style="color:#1F3D89; text-align:center;">Dr.LEPLIN</h3>
+                        <img class="card-img-top" src="../images/portrait.jpg" alt="">
+                        <button class="btn btn-pt btn-primary">En savoir plus</button>
+                    </div>
+
+                    {# Card 3 #}
+                    <div class="card card-praticiens">
+                        <h3 style="color:#1F3D89; text-align:center;">Dr.LEPLIN</h3>
+                        <img class="card-img-top" src="../images/portrait.jpg" alt="">
+                        <button class="btn btn-pt btn-primary">En savoir plus</button>
+                    </div>
+                </div>
+
+                {# CARROUSEL ITEM 2#}
+                <div class="carousel-item">
+                    {# Card 1 #}
+                    <div class="card card-praticiens">
+                        <h3 style="color:#1F3D89; text-align:center;">Dr.METZER</h3>
+                        <img class="card-img-top" src="../images/portrait.jpg" alt="">
+                        <button class="btn btn-pt btn-primary">En savoir plus</button>
+                    </div>
+
+                    {# Card 2 #}
+                    <div class="card card-praticiens">
+                        <h3 style="color:#1F3D89; text-align:center;">Dr.METZER</h3>
+                        <img class="card-img-top" src="../images/portrait.jpg" alt="">
+                        <button class="btn btn-pt btn-primary">En savoir plus</button>
+                    </div>
+
+                    {# Card 3 #}
+                    <div class="card card-praticiens">
+                        <h3 style="color:#1F3D89; text-align:center;">Dr.METZER</h3>
+                        <img class="card-img-top" src="../images/portrait.jpg" alt="">
+                        <button class="btn btn-pt btn-primary">En savoir plus</button>
+                    </div>
+                </div>
+            </div>
+
+            <a class="carousel-control-prev" href="#carouselKine" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselKine" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
 
     </div>

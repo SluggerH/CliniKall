@@ -517,8 +517,6 @@
     font-size: 25px;
     font-weight: medium;
   }
-  
-  
 
 /* Design des cards */
   .card-praticiens{
@@ -560,6 +558,9 @@
     display: flex;
     justify-content: center;
     padding-bottom: 40px;
+  }
+  .carousel{
+    margin-top: 40px;
   }
 
 /***************** PAGE PRATICIEN EN SAVOIR PLUS *****************/

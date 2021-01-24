@@ -1,0 +1,105 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil CliniKall{% endblock %}
+
+{% block body %}
+
+    {# Bloc recherche praticien #}
+    <div class="container accueil">
+      
+        <div class="rdv-accueil">
+            {# Texte bloc recherche praticien #}
+            <div class="text-rh-ac">
+                <p><span>Une clinique à votre service,</span>prenez rendez-vous avec <br> vos professionnels de santé</p>
+            </div>
+            {# Input bloc recherche praticien #}
+            <div class="form_control formu">
+                <form method="GET">
+                    <input type="text" name="search" id="praticien" placeholder="Rechercher un praticien"><br class="espace">
+                    <input class="rechercher" type="submit" value="Rechercher">
+                </form>
+            </div>
+
+        </div>
+    
+    </div>
+
+    {# Bloc accueil comment ça marche  #}
+    <div class="container comment-marche">
+        {# Titre et barre #}
+        <div class="container cm-1">
+            <p class="">Comment ça marche ?</p>
+            <hr color="#1F3D89" width="70px">
+        </div>
+        {# Fonctionnalité du site #}
+        <div class="container cm-2">
+            <div class="cm-21">
+                <img class="picto-ac" src="../images/small-account.jpg" alt="">
+                <p>Je créé un compte</p>
+            </div>
+            <div class="cm-22">
+                <img class="picto-ac" src="../images/small-search.jpg" alt="">
+                <p>Je cherche la spécialité</p>
+            </div>
+            <div class="cm-23">
+                <img class="picto-ac" src="../images/small-praticien.jpg" alt="">
+                <p>Je choisis mon praticien</p>
+            </div>
+        </div>
+
+    </div>
+
+    {# Bloc clinique apporte #}
+    <div class="container clinique-apporte">
+        {# Titre et barre #}
+        <div class="container ca-1">
+            <p class="">Ce que la clinique vous apporte !</p>
+            <hr color="#FFFFFF" width="70px">
+        </div>
+        {# Photo et decription 1 accueil #}
+        <div class="container ca-2">
+            <div class="photo-ac">
+                <img src="../images/accueil-1.jpg" alt="">
+            </div>
+            <div class="desc-ac desc1">
+                <p>Pourquoi créer un compte ? <br>Créez un compte pour vous ou pour votre famille ! <br> En créant un compte familial, vous simplifiez vos démarches et vos parcours de soins. <br>Profitez également gratuitement du carnet de vaccination électronique.</p>
+            </div>
+        </div>
+
+    </div>
+
+    {# Bloc reserver en ligne #}
+    <div class="container reserve-ligne">
+        {# Titre et barre #}
+        <div class="container rl-1">
+            <p class="">Pourquoi réserver en ligne ?</p>
+            <hr color="#1F3D89" width="70px">
+        </div>
+        {# Photo et decription 2 accueil #}
+        <div class="container rl-2">
+            <div class="desc-ac desc2">
+                <p>Gagnez du temps, prenez rendez-vous avec vos praticiens.<br>Si votre praticien a souscrit a une offre de prise de rendez-vous en ligne, vous pourrez réserver et annuler votre créneau en quelques clics.</p>
+            </div>
+            <div class="photo-ac">
+                <img src="../images/accueil-2.jpg" alt="">
+            </div>
+        </div>
+
+    </div>
+
+    {# Formulaire newsletter #}
+    <div class="container newsletter-subscribe">
+        {# Titre et barre #}
+        <div class="intro">
+            <h2 class="text-center">Inscrivez vous à la newsletter</h2>
+        </div>
+        {# Formulaire email #}
+        <div class="formulaire-news">
+            <form class="form-inline" method="post">
+                <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Inscrivez votre email ..."><button class="btn btn-primary" type="submit">Envoyer</button></div>
+            </form>
+        </div>
+
+    </div>
+
+{% endblock %}
