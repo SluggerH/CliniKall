@@ -45,7 +45,7 @@ class AppAuthenticator extends AbstractFormLoginAuthenticator implements Passwor
             && $request->isMethod('POST');
     }
 
-    public function getCredentials(Request $request)
+    public function getCredentials(Request $request)  //obtenir les informations d'identifications
     {
         $credentials = [
             'email' => $request->request->get('email'),
@@ -60,7 +60,7 @@ class AppAuthenticator extends AbstractFormLoginAuthenticator implements Passwor
         return $credentials;
     }
 
-    public function getUser($credentials, UserProviderInterface $userProvider)
+    public function getUser($credentials, UserProviderInterface $userProvider)  //récupérer l'utilisateur connecté et ses données
     {
         $token = new CsrfToken('authenticate', $credentials['csrf_token']);
         if (!$this->csrfTokenManager->isTokenValid($token)) {
@@ -77,7 +77,7 @@ class AppAuthenticator extends AbstractFormLoginAuthenticator implements Passwor
         return $user;
     }
 
-    public function checkCredentials($credentials, UserInterface $user)
+    public function checkCredentials($credentials, UserInterface $user)     //vérifie les identifiants
     {
         return $this->passwordEncoder->isPasswordValid($user, $credentials['password']);
     }
@@ -90,7 +90,7 @@ class AppAuthenticator extends AbstractFormLoginAuthenticator implements Passwor
         return $credentials['password'];
     }
 
-    public function onAuthenticationSuccess(Request $request, TokenInterface $token, string $providerKey)
+    public function onAuthenticationSuccess(Request $request, TokenInterface $token, string $providerKey)  //dirige l'utiliseur après une connexion réussie
     {
         if ($targetPath = $this->getTargetPath($request->getSession(), $providerKey)) {
             return new RedirectResponse($targetPath);
@@ -100,7 +100,7 @@ class AppAuthenticator extends AbstractFormLoginAuthenticator implements Passwor
       //  throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
     }
 
-    protected function getLoginUrl()
+    protected function getLoginUrl()   //récupère l'url de connection
     {
         return $this->urlGenerator->generate(self::LOGIN_ROUTE);
     }

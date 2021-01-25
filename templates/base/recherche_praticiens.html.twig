@@ -13,11 +13,11 @@
                 {% for search_user in search_users %}
                     {% if search_user.isVerified %}
                     <div class="card-body card-admin">
-                        <h5 class="card-title">{{ search_user.lastname }}  {{ search_user.firstname }}</h5>
+                        <h5 class="card-title">{{ search_user.lastname|upper }}  {{ search_user.firstname|capitalize }}</h5>
                         <p class="card-text"> 0{{ search_user.phone }}</p>
                         <p class="card-text">{{ search_user.email }}</p>
                         <p class="card-text">{{ search_user.adress }}</p>
-                        <p class="card-text">{{ search_user.codePostal }}  {{ search_user.city }}</p>
+                        <p class="card-text">{{ search_user.codePostal }}  {{ search_user.city|capitalize }}</p>
                         <a href="{{ path('praticien',{id:search_user.id}) }}" class="btn btn-success">Consulter la page du praticien</a>
                     </div>
                     {% endif %}    

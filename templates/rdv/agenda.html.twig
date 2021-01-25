@@ -4,7 +4,8 @@
 
 {% block body %}
 <div class="container register text-dark">
-<h1 class="h1-register">Prise de RDV avec le praticien {{ praticien.firstname }}  {{ praticien.lastname|upper }}</h1>
+<p>Bonjour {{ user.firstname|capitalize }}</p>
+<h1 class="h1-register">Prise de RDV avec le praticien {{ praticien.firstname|capitalize }}  {{ praticien.lastname|upper }}</h1>
 <div class="d-flex justify-content-between w-100">
 <a class="btn btn-primary" href="{{ path('reservation_agenda',{id: praticien.id,date: previousday|date('Y-m-d') }) }}"><i class="fas fa-arrow-left"></i>Précédent</a>
 <h1 class="h1-register">{{ date|date('d-m-Y') }}</h1>

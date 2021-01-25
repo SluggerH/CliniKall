@@ -5,7 +5,7 @@
 {% block body %}
 
     <div class="container register text-dark">
-        <h1 class="h1-register">Prise de RDV avec le praticien {{ rdv.praticien.firstname }}  {{ rdv.praticien.lastname|upper }}</h1>
+        <h1 class="h1-register">Prise de RDV avec le praticien {{ rdv.praticien.firstname|capitalize }}  {{ rdv.praticien.lastname|upper }}</h1>
         <h3> le {{ rdv.day|date('d-m-Y') }} à {{ rdv.hour }}h<h3>
 
         {{ form_start(RDVForm) }}

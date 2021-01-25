@@ -56,7 +56,7 @@ class RegistrationController extends AbstractController
 
             $token=$this->encryptor->encrypt($user->getEmail());
 
-            // generate a signed url and email it to the user
+            // crée un lien de vérification d'email et l'envoie au patient
             $emailService->send([
                 'to'=>$user->getEmail(),
                 'subject'=>"Inscription sur ClinKall",
@@ -65,7 +65,7 @@ class RegistrationController extends AbstractController
                     'link' => $this->generateUrl('app_verify_email', [ 'token' => $token ], UrlGeneratorInterface::ABSOLUTE_URL)
                 ]
             ]);
-            // do anything else you need here, like send an email
+            
             $this->addFlash('success',"Votre inscription est prise en compte.Merci de valider votre email.");
 
             return $this->redirectToRoute('app_login');
@@ -123,9 +123,7 @@ class RegistrationController extends AbstractController
             $entityManager->persist($userpro);
             $entityManager->flush();
 
-            $token=$this->encryptor->encrypt($userpro->getEmail());
-
-            // generate a signed url and email it to the user
+            // envoie un email au praticien pour accuser la réception de sa demande d'inscription
              $emailService->send([
                 'to'=>$userpro->getEmail(),
                 'subject'=>"Demande d'inscription de praticien sur ClinKall",
@@ -135,6 +133,7 @@ class RegistrationController extends AbstractController
                           ]
                 ]);
 
+            // envoie un email à l'admin pour l'avertir d'une nouvelle demande d'inscription    
             $emailService->send ( [
                 'replyTo' => $userpro->getEmail(),
                 'subject' => '',

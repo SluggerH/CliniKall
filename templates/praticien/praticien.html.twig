@@ -6,7 +6,7 @@
 
 <div class="container praticien-sp">
     
-    <h1>{{ user.lastname }} {{ user.firstname }}</h1>
+    <h1>{{ user.lastname|upper }} {{ user.firstname|capitalize }}</h1>
 
     <p>{{ user.descriptionPatient }}</p>
 
